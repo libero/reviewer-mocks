@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { ConfigType } from "../config";
 
-export const Submit = (config: ConfigType, sign): Function => (
+export const Submit = (config: ConfigType, sign) => (
   req: Request,
   resp: Response
 ): void => {
