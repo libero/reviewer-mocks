@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "dotenv -e ../.env -- nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/main.ts",
-    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "test": "jest"
   },
   "dependencies": {
@@ -19,10 +19,16 @@
     "typescript": "^3.6.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
     "@types/jest": "^24.0.18",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "jest": "^24.9.0",
+    "pino-pretty": "^3.2.1",
+    "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
-    "tslint": "5.16.0",
     "ts-node": "^8.3.0"
   }
 }

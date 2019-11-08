@@ -2,6 +2,6 @@ import { Request, Response } from "express";
 
 export * from "./submit";
 
-export const HealthCheck = (deps: unknown) => (req: Request, res: Response) => {
+export const HealthCheck = () => (req?: Request, res: Response): void => {
   res.json({ ok: true });
 };
