@@ -24,8 +24,6 @@ WORKDIR /app
 COPY --from=source /app/node_modules/ ./node_modules/
 COPY --from=source /app/dist/ ./dist/
 
-COPY src/*/*/*.graphql ./dist/modules/graphql/
-
 EXPOSE 3000
 
 HEALTHCHECK --interval=1m --timeout=1s \
