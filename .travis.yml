@@ -1,0 +1,29 @@
+language: minimal
+
+env:
+  global:
+    - IMAGE_TAG=$TRAVIS_COMMIT
+
+stages:
+  - test
+  - build
+
+jobs:
+  include:
+    - stage: test
+      language: node_js
+      name: Test
+      node_js:
+        - 10.16.3
+      script:
+        - make lint
+        - make test
+
+    - stage: build
+      name: Build
+      script: make build
+      deploy:
+        provider: script
+        script: make push
+        on:
+          branch: master
