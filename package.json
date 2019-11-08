@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "dotenv -e ../.env -- nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/main.ts",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
     "@types/jest": "^24.0.18",
     "jest": "^24.9.0",
     "ts-jest": "^24.0.2",
+    "tslint": "5.16.0",
     "ts-node": "^8.3.0"
   }
 }
