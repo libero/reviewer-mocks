@@ -11,25 +11,25 @@
     "test": "jest"
   },
   "dependencies": {
-    "@types/express": "^4.17.1",
-    "@types/jsonwebtoken": "^8.3.3",
-    "dotenv-cli": "^2.0.1",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "nodemon": "^1.19.2",
-    "typescript": "^3.6.2"
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/jest": "^24.0.18",
+    "@types/jsonwebtoken": "^8.3.5",
     "@typescript-eslint/eslint-plugin": "^2.5.0",
     "@typescript-eslint/parser": "^2.5.0",
-    "@types/jest": "^24.0.18",
+    "dotenv-cli": "^3.0.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
     "pino-pretty": "^3.2.1",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
-    "ts-node": "^8.3.0"
+    "ts-node": "^8.3.0",
+    "typescript": "^3.7.2"
   }
 }
