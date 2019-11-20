@@ -8,7 +8,7 @@ describe('submit', () => {
         mockResponse.redirect = jest.fn();
         const config = {
             continuumLoginJwtSecret: 'jwt_secret',
-            authenticationUrl: 'http://authurl',
+            authenticationUrl: 'http://authurl/authenticate',
         };
         const sign = jest.fn();
 
