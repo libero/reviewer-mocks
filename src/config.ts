@@ -1,12 +1,12 @@
 export interface ConfigType {
-  port?: string;
-  authenticationUrl?: string;
+  port?: number;
+  authenticationUrl: string;
   continuumLoginJwtSecret?: string;
 }
 
 const config: ConfigType = {
-  port: process.env.CONTINUUM_LOGIN_PORT,
-  authenticationUrl: `${process.env.AUTHENTICATION_URL}:${process.env.AUTHENTICATION_PORT}`,
+  port: Number(process.env.CONTINUUM_LOGIN_PORT) || 3001,
+  authenticationUrl: `${process.env.AUTHENTICATION_URL}`,
   continuumLoginJwtSecret: process.env.CONTINUUM_LOGIN_JWT_SECRET
 };
 

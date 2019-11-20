@@ -17,5 +17,7 @@ export const Submit = (config: ConfigType, sign) => (
     }
   );
 
-  resp.redirect(`${config.authenticationUrl}/authenticate/${token}`);
+  const redirectUrl = config.authenticationUrl + (config.authenticationUrl.endsWith('/') ? '' : '/') + token;
+
+  resp.redirect(redirectUrl);
 };
