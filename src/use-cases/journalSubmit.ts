@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { ConfigType } from '../config';
 
-export const Submit = (config: ConfigType, sign) => (req: Request, resp: Response): void => {
+export const JournalSubmit = (config: ConfigType, sign) => (req: Request, resp: Response): void => {
     const token = sign(
         {
             iss: 'journal--prod',
@@ -14,7 +14,7 @@ export const Submit = (config: ConfigType, sign) => (req: Request, resp: Respons
         },
     );
 
-    const redirectUrl = config.authenticationUrl + (config.authenticationUrl.endsWith('/') ? '' : '/') + token;
+    const redirectUrl = config.continuumLoginRedirectUrl + (config.continuumLoginRedirectUrl.endsWith('/') ? '' : '/') + token;
 
     resp.redirect(redirectUrl);
 };

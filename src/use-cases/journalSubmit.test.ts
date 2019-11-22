@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Submit } from './submit';
+import { JournalSubmit } from './journalSubmit';
 
 describe('submit', () => {
     it('tests', () => {
@@ -8,13 +8,13 @@ describe('submit', () => {
         mockResponse.redirect = jest.fn();
         const config = {
             continuumLoginJwtSecret: 'jwt_secret',
-            authenticationUrl: 'http://authurl/authenticate',
+            continuumLoginRedirectUrl: 'http://authurl/authenticate',
         };
         const sign = jest.fn();
 
         sign.mockImplementation(() => 'signed_jwt_token');
 
-        Submit(config, sign)(mockRequest, mockResponse);
+        JournalSubmit(config, sign)(mockRequest, mockResponse);
 
         expect(sign).toHaveBeenCalledTimes(1);
         expect(mockResponse.redirect).toHaveBeenCalledTimes(1);
