@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import journalUserData from '../data/journalUser.json';
+import journalUserData from '../mock-data/journalUser.json';
 import { ConfigType } from '../config';
 
 export const JournalSubmit = (config: ConfigType, sign) => (req: Request, resp: Response): void => {
