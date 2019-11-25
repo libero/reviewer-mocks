@@ -15,7 +15,7 @@ test: get_deps
 	yarn test
 
 build:
-	${DOCKER_COMPOSE} build mock-continuum-login
+	${DOCKER_COMPOSE} build reviewer-mock
 
 push:
 	${PUSH_COMMAND} mock-continuum-login

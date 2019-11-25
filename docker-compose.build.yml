@@ -1,9 +1,9 @@
 version: '3'
 services:
-  mock-continuum-login:
+  reviewer-mock:
     build:
       context: "."
       dockerfile: 'Dockerfile'
       args:
         image_tag: ${IMAGE_TAG}
-    image: libero/mock-continuum-login:${IMAGE_TAG}
+    image: liberoadmin/reviewer-mock:${IMAGE_TAG}

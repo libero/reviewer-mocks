@@ -10,7 +10,10 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "incremental": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules"],
   "include": ["src/**/*.ts"]
