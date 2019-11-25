@@ -1,6 +1,6 @@
 export interface ConfigType {
     port?: number;
-    continuumLoginRedirectUrl: string;
+    continuumLoginRedirectUrl?: string;
     continuumLoginJwtSecret?: string;
     continuumAuthJwtSecret?: string;
     continuumAuthRedirectUrl?: string;
