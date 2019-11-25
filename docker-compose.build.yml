@@ -6,4 +6,4 @@ services:
       dockerfile: 'Dockerfile'
       args:
         image_tag: ${IMAGE_TAG}
-    image: liberoadmin/reviewer-mock:${IMAGE_TAG}
+    image: libero/reviewer-mock:${IMAGE_TAG}

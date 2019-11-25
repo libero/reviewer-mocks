@@ -18,4 +18,4 @@ build:
 	${DOCKER_COMPOSE} build reviewer-mock
 
 push:
-	${PUSH_COMMAND} mock-continuum-login
+	${PUSH_COMMAND} reviewer-mock
