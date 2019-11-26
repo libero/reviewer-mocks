@@ -15,7 +15,7 @@ test: get_deps
 	yarn test
 
 build:
-	${DOCKER_COMPOSE} build reviewer-mock
+	${DOCKER_COMPOSE} build reviewer-mocks
 
 push:
-	${PUSH_COMMAND} reviewer-mock
+	${PUSH_COMMAND} reviewer-mocks

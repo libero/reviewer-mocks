@@ -1,8 +1,8 @@
 {
-  "name": "reviewer-mock",
+  "name": "reviewer-mocks",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "repository": "https://github.com/libero/reviewer-mock",
+  "repository": "https://github.com/libero/reviewer-mocks",
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",

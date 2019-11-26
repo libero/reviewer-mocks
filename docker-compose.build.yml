@@ -1,9 +1,9 @@
 version: '3'
 services:
-  reviewer-mock:
+  reviewer-mocks:
     build:
       context: "."
       dockerfile: 'Dockerfile'
       args:
         image_tag: ${IMAGE_TAG}
-    image: libero/reviewer-mock:${IMAGE_TAG}
+    image: libero/reviewer-mocks:${IMAGE_TAG}
