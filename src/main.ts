@@ -1,14 +1,24 @@
-import * as express from 'express';
+import express from 'express';
 import { Express } from 'express';
 import { sign } from 'jsonwebtoken';
-import { HealthCheck, Submit } from './use-cases';
+import { ApolloServer } from 'apollo-server-express';
+
+import { HealthCheck, JournalSubmit, Authenticate } from './use-cases';
+import { typeDefs, resolvers } from './mock-graphql';
 import config from './config';
 
 function init(): Express {
     const app: Express = express();
+    const apolloServer: ApolloServer = new ApolloServer({
+        typeDefs,
+        resolvers,
+    });
+
+    apolloServer.applyMiddleware({ app, path: '/graphql' });
 
     app.get('/health', HealthCheck());
-    app.get('/submit', Submit(config, sign));
+    app.get('/submit', JournalSubmit(config, sign));
+    app.get('/authenticate/*', Authenticate(config, sign));
 
     return app;
 }

@@ -1,23 +1,23 @@
 import { Request, Response } from 'express';
-import { Submit } from './submit';
+import { Authenticate } from './authenticate';
 
-describe('submit', () => {
-    it('tests', () => {
+describe('authenticate', () => {
+    it('redirects to given url with jwt', () => {
         const mockRequest: Request = {} as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.redirect = jest.fn();
         const config = {
-            continuumLoginJwtSecret: 'jwt_secret',
-            authenticationUrl: 'http://authurl/authenticate',
+            continuumAuthJwtSecret: 'jwt_secret',
+            continuumAuthRedirectUrl: 'http://client/',
         };
         const sign = jest.fn();
 
         sign.mockImplementation(() => 'signed_jwt_token');
 
-        Submit(config, sign)(mockRequest, mockResponse);
+        Authenticate(config, sign)(mockRequest, mockResponse);
 
         expect(sign).toHaveBeenCalledTimes(1);
         expect(mockResponse.redirect).toHaveBeenCalledTimes(1);
-        expect(mockResponse.redirect).toHaveBeenCalledWith('http://authurl/authenticate/signed_jwt_token');
+        expect(mockResponse.redirect).toHaveBeenCalledWith('http://client/#signed_jwt_token');
     });
 });
