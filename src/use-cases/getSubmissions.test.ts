@@ -5,7 +5,7 @@ describe('getSubmissions', (): void => {
         const submissions = getSubmissions([])();
         expect(submissions).toEqual([]);
     });
-    it('returns lis of submissions', () => {
+    it('returns list of submissions', () => {
         const submissions = getSubmissions([{ id: '1' }])();
         expect(submissions).toEqual([{ id: '1' }]);
     });

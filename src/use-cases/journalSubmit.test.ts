@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { JournalSubmit } from './journalSubmit';
 
 describe('submit', () => {
-    it('tests', () => {
+    it('redirects to given url with jwt path', () => {
         const mockRequest: Request = {} as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.redirect = jest.fn();

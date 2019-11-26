@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { Authenticate } from './authenticate';
 
 describe('authenticate', () => {
-    it('tests', () => {
+    it('redirects to given url with jwt', () => {
         const mockRequest: Request = {} as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.redirect = jest.fn();
