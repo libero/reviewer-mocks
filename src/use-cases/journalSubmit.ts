@@ -9,7 +9,6 @@ export const JournalSubmit = (config: ConfigType, sign) => (req: Request, resp: 
 
     const redirectUrl =
         config.continuumLoginRedirectUrl +
-        // (config.continuumLoginRedirectUrl && config.continuumLoginRedirectUrl.endsWith('/') ? '' : '/') +
         '#' +
         token;
 
