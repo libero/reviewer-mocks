@@ -7,10 +7,7 @@ export const JournalSubmit = (config: ConfigType, sign) => (req: Request, resp: 
         expiresIn: '1d',
     });
 
-    const redirectUrl =
-        config.continuumLoginRedirectUrl +
-        '#' +
-        token;
+    const redirectUrl = `${config.continuumLoginRedirectUrl}#${token}`;
 
     resp.redirect(redirectUrl);
 };
