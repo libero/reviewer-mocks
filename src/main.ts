@@ -3,7 +3,7 @@ import { Express } from 'express';
 import { sign } from 'jsonwebtoken';
 import { ApolloServer } from 'apollo-server-express';
 
-import { HealthCheck, JournalSubmit, Authenticate } from './use-cases';
+import { HealthCheck, JournalSubmit, Authenticate, GetProfile } from './use-cases';
 import { typeDefs, resolvers } from './mock-graphql';
 import config from './config';
 
@@ -19,6 +19,7 @@ function init(): Express {
     app.get('/health', HealthCheck());
     app.get('/submit', JournalSubmit(config, sign));
     app.get('/authenticate/*', Authenticate(config, sign));
+    app.get('/profiles/*', GetProfile());
 
     return app;
 }
