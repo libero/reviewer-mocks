@@ -1,18 +1,14 @@
+import { readFileSync } from 'fs';
+
 export interface ConfigType {
-    port?: number;
-    continuumLoginRedirectUrl?: string;
-    continuumLoginJwtSecret?: string;
-    continuumAuthJwtSecret?: string;
-    continuumAuthRedirectUrl?: string;
+    port: number;
+    login_return_url: string;
+    continuum_jwt_secret: string;
+    continuum_return_url: string;
+    authentication_jwt_secret: string;
 }
 
-const config: ConfigType = {
-    port: Number(process.env.PORT) || 3001,
-    continuumLoginRedirectUrl:
-        process.env.CONTINUUM_LOGIN_REDIRECT_URL || `http://localhost:${Number(process.env.PORT) || 3001}/authenticate`,
-    continuumLoginJwtSecret: process.env.CONTINUUM_LOGIN_JWT_SECRET,
-    continuumAuthJwtSecret: process.env.CONTINUUM_AUTH_JWT_SECRET,
-    continuumAuthRedirectUrl: process.env.CONTINUUM_AUTH_REDIRECT_URL,
-};
+const configPath = process.env.CONFIG_PATH ? process.env.CONFIG_PATH : '/etc/reviewer/config.json';
+const config: ConfigType = JSON.parse(readFileSync(configPath, 'utf8'));
 
 export default config;
