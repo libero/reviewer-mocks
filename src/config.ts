@@ -5,7 +5,7 @@ export interface ConfigType {
     login_return_url: string;
     continuum_jwt_secret: string;
     continuum_return_url: string;
-    authenticate_jwt_secret: string;
+    authentication_jwt_secret: string;
 }
 
 const configPath = process.env.CONFIG_PATH ? process.env.CONFIG_PATH : '/etc/reviewer/config.json';
