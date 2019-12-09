@@ -1,15 +1,16 @@
 import { Request, Response } from 'express';
 import { JournalSubmit } from './journalSubmit';
+import { ConfigType } from '../config';
 
 describe('submit', () => {
     it('redirects to given url with jwt path', () => {
         const mockRequest: Request = {} as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.redirect = jest.fn();
-        const config = {
-            continuumLoginJwtSecret: 'jwt_secret',
-            continuumLoginRedirectUrl: 'http://authurl/authenticate',
-        };
+        const config = ({
+            continuum_jwt_secret: 'jwt_secret',
+            continuum_return_url: 'http://authurl/authenticate',
+        } as unknown) as ConfigType;
         const sign = jest.fn();
 
         sign.mockImplementation(() => 'signed_jwt_token');
