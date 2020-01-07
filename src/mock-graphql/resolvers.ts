@@ -1,4 +1,4 @@
-import { getSubmissions, startSubmission } from '../use-cases';
+import { getSubmissions, startSubmission, getCurrentUser } from '../use-cases';
 
 const submissions = [];
 

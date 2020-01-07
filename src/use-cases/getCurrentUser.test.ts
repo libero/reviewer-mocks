@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { GetCurrentUser } from './getCurrentUser';
+import { getCurrentUser } from './getCurrentUser';
 
 describe('getCurrentUser', (): void => {
     it('returns a user', (): void => {
@@ -7,7 +7,7 @@ describe('getCurrentUser', (): void => {
         const mockResponse: Response = {} as Response;
         mockResponse.json = jest.fn();
 
-        GetCurrentUser()(mockRequest, mockResponse);
+        getCurrentUser()(mockRequest, mockResponse);
 
         const user = (mockResponse.json as jest.Mock).mock.calls[0][0];
         expect(mockResponse.json).toHaveBeenCalledTimes(1);
