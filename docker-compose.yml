@@ -2,27 +2,11 @@
 version: '3'
 services:
   reviewer-mocks:
-    image: node:10
+    image: libero/reviewer-mocks:local
     ports:
-      - "${REVIEWER_MOCKS_PORT:-3003}:3003"
-    working_dir: "/src"
-    command: ["bash", "-c", "yarn && yarn run start:dev"]
-    healthcheck:
-      test: "curl localhost:3003/health"
-      interval: 1m
-      timeout: 10s
-      retries: 3
-    environment:
-      PORT: "3003"
-      CONTINUUM_LOGIN_JWT_SECRET: "${CONTINUUM_LOGIN_JWT_SECRET}"
-      CONTINUUM_LOGIN_REDIRECT_URL: "${CONTINUUM_LOGIN_REDIRECT_URL}"
+      - "${CONTINUUM_LOGIN_PORT:-3003}:3003"
+    environment: 
+      DATA_DIRECTORY_PATH: "/etc/mock-data/"
     volumes:
-      - ./config:/etc/reviewer/config.json
-      - ./:/src/:z
-    networks:
-      - infra_api
-
-networks:
-  infra_api:
-    external:
-      name: "infra_api"
+      - ./config/config.example.json:/etc/reviewer/config.json:z
+      - ./mock-data/someOtherMockData:/etc/mock-data/ 
