@@ -1,7 +1,20 @@
 import { readFileSync } from 'fs';
 
-const mockDataDirectoryPath = process.env.DATA_DIRECTORY_PATH ? process.env.DATA_DIRECTORY_PATH : '/app/mock-data/';
+const defaultMockDataDirectoryPath = '/app/mock-data/';
+const mockDataDirectoryPath = process.env.DATA_DIRECTORY_PATH
+    ? process.env.DATA_DIRECTORY_PATH
+    : defaultMockDataDirectoryPath;
 
 export default function(mockDataFileName): object {
-    return JSON.parse(readFileSync(`${mockDataDirectoryPath}${mockDataFileName}`, 'utf8'));
+    let fetchedData;
+    try {
+        fetchedData = readFileSync(`${mockDataDirectoryPath}${mockDataFileName}`, 'utf8');
+    } catch (_) {
+        console.warn(
+            `Failed to fetch mocked data from ${mockDataDirectoryPath}${mockDataFileName} falling back to default mock data`,
+        );
+        fetchedData = readFileSync(`${defaultMockDataDirectoryPath}${mockDataFileName}`, 'utf8');
+    }
+
+    return JSON.parse(fetchedData);
 }

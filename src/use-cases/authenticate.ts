@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import getMockData from 'getMockData';
+import getMockData from '../getMockData';
 import { ConfigType } from '../config';
 
 export const Authenticate = (config: ConfigType, sign) => (req: Request, resp: Response): void => {
