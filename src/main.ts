@@ -22,7 +22,7 @@ function init(): Express {
     app.get('/profiles/*', GetProfile());
 
     // used for integration tests
-    app.get('/redirect_location', RedirectLocation());
+    app.get('/redirect_location_for_intergration_test', RedirectLocation());
 
     return app;
 }
