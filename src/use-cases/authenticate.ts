@@ -1,8 +1,9 @@
 import { Request, Response } from 'express';
-import authenticatedUserData from '../mock-data/authenticatedUser.json';
+import getMockData from '../getMockData';
 import { ConfigType } from '../config';
 
 export const Authenticate = (config: ConfigType, sign) => (req: Request, resp: Response): void => {
+    const authenticatedUserData = getMockData('authenticatedUser.json');
     const token = sign(authenticatedUserData, config.authentication_jwt_secret, {
         expiresIn: '1d',
     });
