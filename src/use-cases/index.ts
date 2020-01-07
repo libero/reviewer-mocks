@@ -5,7 +5,7 @@ export * from './authenticate';
 export * from './getSubmissions';
 export * from './startSubmission';
 export * from './getProfile';
-export * from './getCurrentUser';
+export * from './getCurrentProfile';
 
 export const HealthCheck = () => (req: Request, res: Response): void => {
     res.json({ ok: true });

@@ -1,5 +1,5 @@
 import getMockData from '../getMockData';
 
-export const getCurrentUser = () => (): object => {
+export const getCurrentProfile = () => (): object => {
     return getMockData('currentUser.json');
 };
