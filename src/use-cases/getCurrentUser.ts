@@ -1,6 +1,5 @@
-import { Request, Response } from 'express';
-import currentUser from '../mock-data/currentUser.json';
+import getMockData from '../getMockData';
 
-export const getCurrentUser = () => (req: Request, res: Response): void => {
-    res.json(currentUser);
+export const getCurrentUser = () => (): object => {
+    return getMockData('currentUser.json');
 };
