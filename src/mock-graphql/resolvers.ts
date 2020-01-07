@@ -4,6 +4,7 @@ const submissions = [];
 
 export const resolvers = {
     Query: {
+        getCurrentUser: getCurrentUser(),
         getSubmissions: getSubmissions(submissions),
     },
     Mutation: {
