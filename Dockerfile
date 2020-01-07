@@ -25,6 +25,7 @@ WORKDIR /app
 
 COPY --from=source /app/node_modules/ ./node_modules/
 COPY --from=source /app/dist/ ./dist/
+COPY mock-data/ /app/mock-data/
 
 EXPOSE 3000
 
