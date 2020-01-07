@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { ConfigType } from '../config';
 import { Authenticate } from './authenticate';
 
 describe('authenticate', () => {
@@ -6,10 +7,10 @@ describe('authenticate', () => {
         const mockRequest: Request = {} as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.redirect = jest.fn();
-        const config = {
-            continuumAuthJwtSecret: 'jwt_secret',
-            continuumAuthRedirectUrl: 'http://client/',
-        };
+        const config = ({
+            authentication_jwt_secret: 'jwt_secret',
+            login_return_url: 'http://client/',
+        } as unknown) as ConfigType;
         const sign = jest.fn();
 
         sign.mockImplementation(() => 'signed_jwt_token');

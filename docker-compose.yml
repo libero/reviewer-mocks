@@ -4,7 +4,7 @@ services:
   reviewer-mocks:
     image: node:10
     ports:
-      - "${CONTINUUM_LOGIN_PORT:-3003}:3003"
+      - "${REVIEWER_MOCKS_PORT:-3003}:3003"
     working_dir: "/src"
     command: ["bash", "-c", "yarn && yarn run start:dev"]
     healthcheck:
@@ -17,6 +17,7 @@ services:
       CONTINUUM_LOGIN_JWT_SECRET: "${CONTINUUM_LOGIN_JWT_SECRET}"
       CONTINUUM_LOGIN_REDIRECT_URL: "${CONTINUUM_LOGIN_REDIRECT_URL}"
     volumes:
+      - ./config:/etc/reviewer/config.json
       - ./:/src/:z
     networks:
       - infra_api
