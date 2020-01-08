@@ -6,6 +6,7 @@ export * from './getSubmissions';
 export * from './startSubmission';
 export * from './getProfile';
 export * from './getCurrentProfile';
+export * from './redirectLocation';
 
 export const HealthCheck = () => (req: Request, res: Response): void => {
     res.json({ ok: true });
