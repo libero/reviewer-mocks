@@ -7,9 +7,16 @@ export const typeDefs = gql`
         updated: String!
     }
 
+    type User {
+        id: ID!
+        name: String!
+        role: String!
+    }
+
     type Query {
         getSubmissions: [Submission!]!
         getSubmission(id: ID!): Submission
+        getCurrentUser: User!
     }
 
     type Mutation {
