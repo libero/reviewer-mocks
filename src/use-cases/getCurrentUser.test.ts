@@ -1,9 +1,9 @@
-import { getCurrentProfile } from './getCurrentProfile';
+import { getCurrentUser } from './getCurrentUser';
 
-describe('getCurrentProfile', (): void => {
+describe('getCurrentUser', (): void => {
     it('returns a user', (): void => {
         type User = { id: string; name: string; role: string };
-        const user = getCurrentProfile()() as User;
+        const user = getCurrentUser()() as User;
 
         expect(typeof user).toBe('object');
         expect(typeof user.id).toBe('string');

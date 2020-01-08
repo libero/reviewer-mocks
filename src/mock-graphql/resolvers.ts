@@ -1,10 +1,10 @@
-import { getSubmissions, startSubmission, getCurrentProfile } from '../use-cases';
+import { getSubmissions, startSubmission, getCurrentUser } from '../use-cases';
 
 const submissions = [];
 
 export const resolvers = {
     Query: {
-        getCurrentProfile: getCurrentProfile(),
+        getCurrentUser: getCurrentUser(),
         getSubmissions: getSubmissions(submissions),
     },
     Mutation: {

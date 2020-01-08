@@ -5,7 +5,7 @@ export * from './authenticate';
 export * from './getSubmissions';
 export * from './startSubmission';
 export * from './getProfile';
-export * from './getCurrentProfile';
+export * from './getCurrentUser';
 export * from './redirectLocation';
 
 export const HealthCheck = () => (req: Request, res: Response): void => {
