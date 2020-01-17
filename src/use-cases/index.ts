@@ -5,6 +5,7 @@ export * from './authenticate';
 export * from './getSubmissions';
 export * from './startSubmission';
 export * from './getProfile';
+export * from './getPerson';
 export * from './getCurrentUser';
 export * from './redirectLocation';
 
