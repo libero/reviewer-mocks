@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 export * from './journalSubmit';
 export * from './authenticate';
 export * from './getSubmissions';
+export * from './getSubmission';
 export * from './startSubmission';
 export * from './getProfile';
 export * from './getPerson';
