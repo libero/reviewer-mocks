@@ -8,12 +8,12 @@ describe('deleteSubmission', (): void => {
         expect(submissions).toHaveLength(1);
         expect(submissions[0]).toStrictEqual({ id: 'B' });
     });
-    it('returns true when it has deleted a submission', (): void => {
+    it('returns id when it has deleted a submission', (): void => {
         const submissions = [{ id: 'A' }];
-        expect(deleteSubmission(submissions)('A')).toBe(true);
+        expect(deleteSubmission(submissions)('A')).toBe('A');
     });
-    it('returns false when it cant find submission to delete', (): void => {
+    it('returns undefined when it cant find submission to delete', (): void => {
         const submissions = [{ id: 'A' }];
-        expect(deleteSubmission(submissions)('C')).toBe(false);
+        expect(() => deleteSubmission(submissions)('C')).toThrow("can't find submission: C");
     });
 });
