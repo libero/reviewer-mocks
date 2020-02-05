@@ -22,6 +22,6 @@ export const typeDefs = gql`
     type Mutation {
         startSubmission(articleType: String!): Submission!
         changeSubmissionTitle(id: ID!, title: String!): Submission!
-        deleteSubmission(id: ID!): Boolean
+        deleteSubmission(id: ID!): ID
     }
 `;
