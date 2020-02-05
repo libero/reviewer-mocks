@@ -1,4 +1,4 @@
-export const getSubmission = (submissions: Array<{ id: string }>): ((id: string) => {}) => (id): {} => {
+export const getSubmission = (submissions: Array<{ id: string }>): ((_, { id }) => {}) => (_, { id }): {} => {
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     if (submissionIndex !== -1) {
         return submissions[submissionIndex];
