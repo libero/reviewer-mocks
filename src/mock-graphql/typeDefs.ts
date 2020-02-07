@@ -5,6 +5,7 @@ export const typeDefs = gql`
         id: ID!
         title: String!
         updated: String!
+        articleType: String!
     }
 
     type User {
