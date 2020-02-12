@@ -1,5 +1,8 @@
 {
     "id": "ewwboc7m",
     "name": "Tamlyn Rhodes",
-    "role": "author"
+    "role": "author",
+    "email": "test@email.com",
+    "aff": "somewhere"
 }
+
