@@ -12,6 +12,8 @@ export const typeDefs = gql`
         id: ID!
         name: String!
         role: String!
+        aff: String!
+        email: String!
     }
 
     type Query {
