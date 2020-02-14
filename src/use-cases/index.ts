@@ -10,6 +10,7 @@ export * from './getProfile';
 export * from './getPerson';
 export * from './getCurrentUser';
 export * from './redirectLocation';
+export * from './saveDetailsPage';
 
 export const HealthCheck = () => (req: Request, res: Response): void => {
     res.json({ ok: true });

@@ -1,1 +1,1 @@
-export const getSubmissions = (submissions: Array<{}>): (() => Array<{}>) => () => submissions;
+export const getSubmissions = (submissions: Array<{}>): (() => Array<{}>) => (): object[] => submissions;

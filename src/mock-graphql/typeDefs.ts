@@ -6,6 +6,21 @@ export const typeDefs = gql`
         title: String!
         updated: String!
         articleType: String!
+        author: AuthorDetails!
+    }
+
+    type AuthorDetails {
+        firstName: String!
+        lastName: String!
+        email: String!
+        institution: String!
+    }
+
+    input AuthorDetailsInput {
+        firstName: String!
+        lastName: String!
+        email: String!
+        institution: String!
     }
 
     type User {
@@ -26,5 +41,6 @@ export const typeDefs = gql`
         startSubmission(articleType: String!): Submission!
         changeSubmissionTitle(id: ID!, title: String!): Submission!
         deleteSubmission(id: ID!): ID
+        saveDetailsPage(id: ID!, details: AuthorDetailsInput!): Submission!
     }
 `;

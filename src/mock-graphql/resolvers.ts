@@ -1,4 +1,11 @@
-import { getSubmissions, startSubmission, getCurrentUser, getSubmission, deleteSubmission } from '../use-cases';
+import {
+    getSubmissions,
+    startSubmission,
+    getCurrentUser,
+    getSubmission,
+    deleteSubmission,
+    saveDetailsPage,
+} from '../use-cases';
 
 const submissions = [];
 
@@ -11,5 +18,6 @@ export const resolvers = {
     Mutation: {
         startSubmission: startSubmission(submissions),
         deleteSubmission: deleteSubmission(submissions),
+        saveDetailsPage: saveDetailsPage(submissions),
     },
 };
