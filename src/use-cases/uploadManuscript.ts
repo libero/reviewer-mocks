@@ -21,7 +21,7 @@ type File = {
     status: string;
 };
 
-type Submissoin = {
+type Submission = {
     id: string;
     title: string;
     updated: Date;
@@ -31,7 +31,10 @@ type Submissoin = {
     manuscriptFile?: File;
 };
 
-export const uploadManuscript = (submissions): ((_, { id }) => string | undefined) => (_, { id }) => {
+export const uploadManuscript = (submissions): ((_, { id, file, fileSize }) => Submission) => (
+    _,
+    { id },
+): Submission => {
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     if (submissionIndex !== -1) {
         const manuscriptFile: File = {
