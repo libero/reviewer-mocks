@@ -21,6 +21,16 @@ type File = {
     status: string;
 };
 
+type Submissoin = {
+    id: string;
+    title: string;
+    updated: Date;
+    articleType: string;
+    status: string;
+    createdBy: string;
+    manuscriptFile?: File;
+};
+
 export const uploadManuscript = (submissions): ((_, { id }) => string | undefined) => (_, { id }) => {
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     if (submissionIndex !== -1) {
