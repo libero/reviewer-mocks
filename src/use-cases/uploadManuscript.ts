@@ -24,7 +24,7 @@ type File = {
 export const uploadManuscript = (submissions): ((_, { id }) => string | undefined) => (_, { id }) => {
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     if (submissionIndex !== -1) {
-        const file: File = {
+        const manuscriptFile: File = {
             id: '0ee77f61-b89d-40cd-893e-88089359eb6b',
             type: FileType.MANUSCRIPT_SOURCE,
             filename: 'somefile',
@@ -35,9 +35,7 @@ export const uploadManuscript = (submissions): ((_, { id }) => string | undefine
         };
         return {
             ...submissions[submissionIndex],
-            ...{
-                file,
-            },
+            manuscriptFile,
         };
     }
 
