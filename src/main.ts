@@ -2,7 +2,15 @@ import express from 'express';
 import { Express } from 'express';
 import { sign } from 'jsonwebtoken';
 import { ApolloServer } from 'apollo-server-express';
-import { HealthCheck, JournalSubmit, Authenticate, GetProfile, RedirectLocation, GetPerson } from './use-cases';
+import {
+    HealthCheck,
+    JournalSubmit,
+    Authenticate,
+    GetProfile,
+    RedirectLocation,
+    GetPerson,
+    getCurrentUser,
+} from './use-cases';
 import { typeDefs, resolvers } from './mock-graphql';
 import config from './config';
 
@@ -20,6 +28,7 @@ function init(): Express {
     app.get('/authenticate/*', Authenticate(config, sign));
     app.get('/profiles/*', GetProfile());
     app.get('/people/*', GetPerson());
+    app.get('/current-user', getCurrentUser());
 
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
