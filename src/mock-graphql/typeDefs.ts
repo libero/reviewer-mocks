@@ -1,6 +1,8 @@
 import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
+    scalar Upload
+
     type Submission {
         id: ID!
         title: String!
@@ -42,5 +44,6 @@ export const typeDefs = gql`
         changeSubmissionTitle(id: ID!, title: String!): Submission!
         deleteSubmission(id: ID!): ID
         saveDetailsPage(id: ID!, details: AuthorDetailsInput!): Submission!
+        uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
     }
 `;
