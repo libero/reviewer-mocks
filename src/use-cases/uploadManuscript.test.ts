@@ -1,6 +1,6 @@
 import { uploadManuscript } from './uploadManuscript';
 
-describe('startSubmisison', (): void => {
+describe('uploadManuscript', (): void => {
     it('Uploads a manuscript file if submission exists', (): void => {
         const submissions = [{ id: 'A' }, { id: 'B' }];
         const submission = uploadManuscript(submissions)(null, { id: 'A', fileSize: 40, file: {} });
