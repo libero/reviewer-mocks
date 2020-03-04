@@ -9,7 +9,7 @@ import {
     GetProfile,
     RedirectLocation,
     GetPerson,
-    getCurrentUser,
+    getCurrentUserREST,
 } from './use-cases';
 import { typeDefs, resolvers } from './mock-graphql';
 import config from './config';
@@ -28,7 +28,7 @@ function init(): Express {
     app.get('/authenticate/*', Authenticate(config, sign));
     app.get('/profiles/*', GetProfile());
     app.get('/people/*', GetPerson());
-    app.get('/current-user', getCurrentUser());
+    app.get('/current-user', getCurrentUserREST());
 
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
