@@ -1,8 +1,6 @@
 import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
-    scalar Upload
-
     type Submission {
         id: ID!
         title: String!
