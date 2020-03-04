@@ -12,7 +12,7 @@ const submissions = [];
 
 export const resolvers = {
     Query: {
-        getCurrentUser: getCurrentUser(),
+        getCurrentUser,
         getSubmissions: getSubmissions(submissions),
         getSubmission: getSubmission(submissions),
     },
