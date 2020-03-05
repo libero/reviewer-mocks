@@ -6,7 +6,8 @@ export const typeDefs = gql`
         title: String!
         updated: String!
         articleType: String!
-        author: AuthorDetails!
+        author: AuthorDetails
+        coverLetter: String
     }
 
     type AuthorDetails {
