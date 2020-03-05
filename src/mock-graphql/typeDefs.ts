@@ -6,7 +6,8 @@ export const typeDefs = gql`
         title: String!
         updated: String!
         articleType: String!
-        author: AuthorDetails!
+        author: AuthorDetails
+        coverLetter: String
     }
 
     type AuthorDetails {
@@ -42,6 +43,7 @@ export const typeDefs = gql`
         changeSubmissionTitle(id: ID!, title: String!): Submission!
         deleteSubmission(id: ID!): ID
         saveDetailsPage(id: ID!, details: AuthorDetailsInput!): Submission!
+        saveFilesPage(id: ID!, coverLetter: String!): Submission!
         uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
     }
 `;
