@@ -31,16 +31,18 @@ type Submission = {
     manuscriptFile?: File;
 };
 
-export const uploadManuscript = (submissions): ((_, { id, file, fileSize }) => Submission) => (
+export const uploadManuscript = (submissions): ((_, { id, file, fileSize }) => Promise<Submission>) => async (
     _,
-    { id },
-): Submission => {
+    { id, file },
+): Promise<Submission> => {
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
+
+    // file = { path: '...' } only
     if (submissionIndex !== -1) {
         const manuscriptFile: File = {
             id: '0ee77f61-b89d-40cd-893e-88089359eb6b',
             type: FileType.MANUSCRIPT_SOURCE,
-            filename: 'somefile',
+            filename: file.path,
             url: 'http://localhost/bucket/name.pdf',
             mimeType: 'application/pdf',
             size: 1000,

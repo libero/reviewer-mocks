@@ -2,13 +2,13 @@ import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
     type File {
-        id: string
-        type: string
-        filename: string
-        url: string
-        mimeType: string
-        size: number
-        status: string
+        id: String
+        type: String
+        filename: String
+        url: String
+        mimeType: String
+        size: Int
+        status: String
     }
 
     type Submission {
