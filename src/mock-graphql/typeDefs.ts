@@ -1,6 +1,16 @@
 import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
+    type File {
+        id: String
+        type: String
+        filename: String
+        url: String
+        mimeType: String
+        size: Int
+        status: String
+    }
+
     type Submission {
         id: ID!
         title: String!
@@ -8,6 +18,7 @@ export const typeDefs = gql`
         articleType: String!
         author: AuthorDetails
         coverLetter: String
+        manuscriptFile: File
     }
 
     type AuthorDetails {
