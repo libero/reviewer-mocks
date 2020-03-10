@@ -48,10 +48,8 @@ export const uploadManuscript = (submissions): ((_, { id, file, fileSize }) => P
             size: 1000,
             status: FileStatus.UPLOADED,
         };
-        return {
-            ...submissions[submissionIndex],
-            manuscriptFile,
-        };
+        submissions[submissionIndex].manuscriptFile = manuscriptFile;
+        return submissions[submissionIndex];
     }
 
     throw new Error("can't find submission: " + id);

@@ -14,4 +14,10 @@ describe('uploadManuscript', (): void => {
             "can't find submission: C",
         );
     });
+
+    it('adds the manuscriptFile to the in memory submission object', async (): Promise<void> => {
+        const submissions: { id: string; manuscriptFile?: {} }[] = [{ id: 'A' }];
+        await uploadManuscript(submissions)(null, { id: 'A', fileSize: 40, file: {} });
+        expect(submissions[0].manuscriptFile).toBeDefined();
+    });
 });
