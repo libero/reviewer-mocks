@@ -6,5 +6,12 @@ export const getCurrentUser = (): object => {
 };
 
 export const getCurrentUserREST = () => (req: Request, res: Response): void => {
+    const header = req.headers.authorization;
+    if (typeof header !== 'undefined') {
+        try {
+            const token = JSON.parse(Buffer.from(header, 'base64').toString());
+            res.json({ ...getCurrentUser(), id: token.sub });
+        } catch (e) {}
+    }
     res.json(getCurrentUser());
 };
