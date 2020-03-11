@@ -10,7 +10,7 @@ export * from './getProfile';
 export * from './getPerson';
 export * from './getCurrentUser';
 export * from './redirectLocation';
-export * from './saveDetailsPage';
+export * from './saveAuthorPage';
 export * from './saveFilesPage';
 export * from './uploadManuscript';
 

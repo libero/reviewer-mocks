@@ -1,7 +1,7 @@
 import { v4 } from 'uuid';
-import { saveDetailsPage } from './saveDetailsPage';
+import { saveAuthorPage } from './saveAuthorPage';
 
-describe('saveDetailsPage', (): void => {
+describe('saveAuthorPage', (): void => {
     it('save details returns error if id not found', (): void => {
         const submissionId = v4();
         const submissions = [
@@ -23,7 +23,7 @@ describe('saveDetailsPage', (): void => {
             institution: 'eLife',
         };
 
-        const badRequest = (): object => saveDetailsPage(submissions)(null, { id: submissionId, details: input });
+        const badRequest = (): object => saveAuthorPage(submissions)(null, { id: submissionId, details: input });
         expect(badRequest).toThrow();
     });
 
@@ -48,7 +48,7 @@ describe('saveDetailsPage', (): void => {
             institution: 'eLife',
         };
 
-        saveDetailsPage(submissions)(null, { id: submissionId, details: input });
+        saveAuthorPage(submissions)(null, { id: submissionId, details: input });
         expect(submissions).toHaveLength(1);
         expect(submissions[0].author.firstName).toBe('Bob');
         expect(submissions[0].author.lastName).toBe('Windsor');
