@@ -27,7 +27,7 @@ describe('saveAuthorPage', (): void => {
         expect(badRequest).toThrow();
     });
 
-    it('save details of a submission', (): void => {
+    it('save author details of a submission', (): void => {
         const submissionId = v4();
         const submissions = [
             {
