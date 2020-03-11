@@ -5,6 +5,7 @@ import {
     getSubmission,
     deleteSubmission,
     saveAuthorPage,
+    saveDetailsPage,
     saveFilesPage,
     uploadManuscript,
 } from '../use-cases';
@@ -22,6 +23,7 @@ export const resolvers = {
         deleteSubmission: deleteSubmission(submissions),
         saveAuthorPage: saveAuthorPage(submissions),
         saveFilesPage: saveFilesPage(submissions),
+        saveDetailsPage: saveDetailsPage(submissions),
         uploadManuscript: uploadManuscript(submissions),
     },
 };

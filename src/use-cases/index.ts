@@ -12,6 +12,7 @@ export * from './getCurrentUser';
 export * from './redirectLocation';
 export * from './saveAuthorPage';
 export * from './saveFilesPage';
+export * from './saveDetailsPage';
 export * from './uploadManuscript';
 
 export const HealthCheck = () => (req: Request, res: Response): void => {

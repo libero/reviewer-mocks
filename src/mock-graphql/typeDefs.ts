@@ -19,6 +19,7 @@ export const typeDefs = gql`
         author: AuthorDetails
         coverLetter: String
         manuscriptFile: File
+        manuscriptDetails: ManuscriptDetails
     }
 
     type AuthorDetails {
@@ -33,6 +34,24 @@ export const typeDefs = gql`
         lastName: String!
         email: String!
         institution: String!
+    }
+
+    type ManuscriptDetails {
+        title: String
+        articleType: String
+        subjects: [String]
+        previouslyDiscussed: String
+        previouslySubmitted: [String!]
+        cosubmission: [String!]
+    }
+
+    input ManuscriptDetailsInput {
+        title: String
+        articleType: String
+        subjects: [String]
+        previouslyDiscussed: String
+        previouslySubmitted: [String!]
+        cosubmission: [String!]
     }
 
     type User {
@@ -55,6 +74,7 @@ export const typeDefs = gql`
         deleteSubmission(id: ID!): ID
         saveAuthorPage(id: ID!, details: AuthorDetailsInput!): Submission!
         saveFilesPage(id: ID!, coverLetter: String!): Submission!
+        saveDetailsPage(id: ID!, details: ManuscriptDetailsInput!): Submission!
         uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
     }
 `;
