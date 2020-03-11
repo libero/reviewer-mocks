@@ -38,7 +38,6 @@ export const typeDefs = gql`
 
     type ManuscriptDetails {
         title: String
-        articleType: String
         subjects: [String]
         previouslyDiscussed: String
         previouslySubmitted: [String!]
@@ -47,7 +46,6 @@ export const typeDefs = gql`
 
     input ManuscriptDetailsInput {
         title: String
-        articleType: String
         subjects: [String]
         previouslyDiscussed: String
         previouslySubmitted: [String!]

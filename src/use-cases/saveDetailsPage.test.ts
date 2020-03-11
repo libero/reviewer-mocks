@@ -9,7 +9,6 @@ describe('saveDetailsPage', (): void => {
                 id: v4(),
                 details: {
                     title: '',
-                    articleType: '',
                     subjects: [],
                     previouslyDiscussed: '',
                     previouslySubmitted: [],
@@ -20,7 +19,6 @@ describe('saveDetailsPage', (): void => {
 
         const input = {
             title: 'test',
-            articleType: 'researchArticle',
             subjects: ['Cancer Biology'],
             previouslyDiscussed: '',
             previouslySubmitted: [],
@@ -38,7 +36,6 @@ describe('saveDetailsPage', (): void => {
                 id: submissionId,
                 details: {
                     title: '',
-                    articleType: '',
                     subjects: [],
                     previouslyDiscussed: '',
                     previouslySubmitted: [],
@@ -49,7 +46,6 @@ describe('saveDetailsPage', (): void => {
 
         const input = {
             title: 'test',
-            articleType: 'researchArticle',
             subjects: ['Cancer Biology'],
             previouslyDiscussed: 'no',
             previouslySubmitted: ['not-sure'],
@@ -59,7 +55,6 @@ describe('saveDetailsPage', (): void => {
         saveDetailsPage(submissions)(null, { id: submissionId, details: input });
         expect(submissions).toHaveLength(1);
         expect(submissions[0].details.title).toBe('test');
-        expect(submissions[0].details.articleType).toBe('researchArticle');
         expect(submissions[0].details.subjects).toHaveLength(1);
         expect(submissions[0].details.subjects[0]).toBe('Cancer Biology');
         expect(submissions[0].details.previouslyDiscussed).toBe('no');
