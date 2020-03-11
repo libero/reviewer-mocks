@@ -1,4 +1,4 @@
-export const saveDetailsPage = (submissions: Array<{ id: string; author: {} }>): ((_, { id, details }) => {}) => (
+export const saveAuthorPage = (submissions: Array<{ id: string; author: {} }>): ((_, { id, details }) => {}) => (
     _,
     { id, details = {} },
 ): {} => {

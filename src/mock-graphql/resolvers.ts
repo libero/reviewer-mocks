@@ -4,7 +4,7 @@ import {
     getCurrentUser,
     getSubmission,
     deleteSubmission,
-    saveDetailsPage,
+    saveAuthorPage,
     saveFilesPage,
     uploadManuscript,
 } from '../use-cases';
@@ -20,7 +20,7 @@ export const resolvers = {
     Mutation: {
         startSubmission: startSubmission(submissions),
         deleteSubmission: deleteSubmission(submissions),
-        saveDetailsPage: saveDetailsPage(submissions),
+        saveAuthorPage: saveAuthorPage(submissions),
         saveFilesPage: saveFilesPage(submissions),
         uploadManuscript: uploadManuscript(submissions),
     },

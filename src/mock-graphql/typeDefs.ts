@@ -53,7 +53,7 @@ export const typeDefs = gql`
         startSubmission(articleType: String!): Submission!
         changeSubmissionTitle(id: ID!, title: String!): Submission!
         deleteSubmission(id: ID!): ID
-        saveDetailsPage(id: ID!, details: AuthorDetailsInput!): Submission!
+        saveAuthorPage(id: ID!, details: AuthorDetailsInput!): Submission!
         saveFilesPage(id: ID!, coverLetter: String!): Submission!
         uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
     }
