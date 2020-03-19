@@ -13,7 +13,6 @@ export const typeDefs = gql`
 
     type Submission {
         id: ID!
-        title: String!
         updated: String!
         articleType: String!
         author: AuthorDetails!
