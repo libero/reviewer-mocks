@@ -20,7 +20,7 @@ export const typeDefs = gql`
         manuscriptDetails: ManuscriptDetails
         supportingFiles: [File]
         coverLetter: String
-        suggestions: [String]!
+        suggestions: [String]
     }
 
     type AuthorDetails {
