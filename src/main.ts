@@ -30,7 +30,7 @@ function init(): Express {
     app.get('/profiles/*', GetProfile());
     app.get('/people/*', GetPerson());
     app.get('/current-user', getCurrentUserREST());
-    app.get('/science-beam/convert', extractScienceBeam());
+    app.post('/science-beam/convert', extractScienceBeam());
 
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
