@@ -14,6 +14,7 @@ export * from './saveAuthorPage';
 export * from './saveFilesPage';
 export * from './saveDetailsPage';
 export * from './uploadManuscript';
+export * from './extractScienceBeam';
 
 export const HealthCheck = () => (req: Request, res: Response): void => {
     res.json({ ok: true });

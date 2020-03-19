@@ -13,13 +13,14 @@ export const typeDefs = gql`
 
     type Submission {
         id: ID!
-        title: String!
         updated: String!
         articleType: String!
-        author: AuthorDetails
-        coverLetter: String
+        author: AuthorDetails!
         manuscriptFile: File
         manuscriptDetails: ManuscriptDetails
+        supportingFiles: [File]
+        coverLetter: String
+        suggestions: [String]
     }
 
     type AuthorDetails {

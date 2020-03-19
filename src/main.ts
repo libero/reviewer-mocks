@@ -10,6 +10,7 @@ import {
     RedirectLocation,
     GetPerson,
     getCurrentUserREST,
+    extractScienceBeam,
 } from './use-cases';
 import { typeDefs, resolvers } from './mock-graphql';
 import config from './config';
@@ -29,6 +30,7 @@ function init(): Express {
     app.get('/profiles/*', GetProfile());
     app.get('/people/*', GetPerson());
     app.get('/current-user', getCurrentUserREST());
+    app.post('/science-beam/convert', extractScienceBeam());
 
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
