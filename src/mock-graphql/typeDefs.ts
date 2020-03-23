@@ -87,7 +87,7 @@ export const typeDefs = gql`
         changeSubmissionTitle(id: ID!, title: String!): Submission!
         deleteSubmission(id: ID!): ID
         saveAuthorPage(id: ID!, details: AuthorDetailsInput!): Submission!
-        saveFilesPage(id: ID!, coverLetter: String!): Submission!
+        saveFilesPage(id: ID!, coverLetter: String): Submission!
         saveDetailsPage(id: ID!, details: ManuscriptDetailsInput!): Submission!
         uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
     }
