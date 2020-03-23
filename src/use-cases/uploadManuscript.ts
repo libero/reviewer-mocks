@@ -28,7 +28,9 @@ type Submission = {
     articleType: string;
     status: string;
     createdBy: string;
-    manuscriptFile?: File;
+    files: {
+        manuscriptFile?: File;
+    };
 };
 
 export const uploadManuscript = (submissions): ((_, { id, file, fileSize }) => Promise<Submission>) => async (
@@ -48,7 +50,9 @@ export const uploadManuscript = (submissions): ((_, { id, file, fileSize }) => P
             size: 1000,
             status: FileStatus.UPLOADED,
         };
-        submissions[submissionIndex].manuscriptFile = manuscriptFile;
+        submissions[submissionIndex].files
+            ? (submissions[submissionIndex].files.manuscriptFile = manuscriptFile)
+            : (submissions[submissionIndex].files = { manuscriptFile });
         return submissions[submissionIndex];
     }
 
