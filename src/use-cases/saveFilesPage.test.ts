@@ -7,25 +7,24 @@ describe('saveFilesPage', (): void => {
         const submissions = [
             {
                 id: v4(),
-                coverLetter: '',
+                files: { coverLetter: '' },
             },
         ];
 
         const badRequest = (): object => saveFilesPage(submissions)(null, { id: submissionId, coverLetter: 'test' });
         expect(badRequest).toThrow();
     });
-
     it('save coverLetter of a submission', (): void => {
         const submissionId = v4();
         const submissions = [
             {
                 id: submissionId,
-                coverLetter: '',
+                files: { coverLetter: '' },
             },
         ];
-        expect(submissions[0].coverLetter).toBe('');
+        expect(submissions[0].files.coverLetter).toBe('');
         saveFilesPage(submissions)(null, { id: submissionId, coverLetter: 'test' });
         expect(submissions).toHaveLength(1);
-        expect(submissions[0].coverLetter).toBe('test');
+        expect(submissions[0].files.coverLetter).toBe('test');
     });
 });

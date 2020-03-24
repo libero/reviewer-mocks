@@ -5,7 +5,7 @@ describe('uploadManuscript', (): void => {
         const submissions = [{ id: 'A' }, { id: 'B' }];
         const submission = await uploadManuscript(submissions)(null, { id: 'A', fileSize: 40, file: {} });
         expect(submission).toBeTruthy();
-        expect(submission.manuscriptFile?.url).toBe('http://localhost/bucket/name.pdf');
+        expect(submission.files?.manuscriptFile?.url).toBe('http://localhost/bucket/name.pdf');
     });
 
     it('Throws if submission does not exist', async (): Promise<void> => {
@@ -16,8 +16,8 @@ describe('uploadManuscript', (): void => {
     });
 
     it('adds the manuscriptFile to the in memory submission object', async (): Promise<void> => {
-        const submissions: { id: string; manuscriptFile?: {} }[] = [{ id: 'A' }];
+        const submissions: { id: string; files?: { manuscriptFile?: {} } }[] = [{ id: 'A' }];
         await uploadManuscript(submissions)(null, { id: 'A', fileSize: 40, file: {} });
-        expect(submissions[0].manuscriptFile).toBeDefined();
+        expect(submissions[0].files?.manuscriptFile).toBeDefined();
     });
 });

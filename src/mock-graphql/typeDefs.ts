@@ -15,12 +15,12 @@ export const typeDefs = gql`
         id: ID!
         updated: String!
         articleType: String!
-        author: AuthorDetails!
-        manuscriptFile: File
+        author: AuthorDetails
         manuscriptDetails: ManuscriptDetails
-        supportingFiles: [File]
-        coverLetter: String
-        suggestions: [String]
+        files: FileDetails
+        editors: EditorDetails
+        disclosure: DisclosureDetails
+        suggestions: [Suggestion]
     }
 
     type AuthorDetails {
@@ -29,14 +29,26 @@ export const typeDefs = gql`
         email: String!
         institution: String!
     }
-
+    type FileDetails {
+        manuscriptFile: File
+        supportingFiles: [File]
+        coverLetter: String
+    }
+    type EditorDetails {
+        opposedSeniorEditorsReason: String
+        opposedReviewingEditorsReason: String
+        opposedReviewersReason: String
+    }
+    type DisclosureDetails {
+        submitterSignature: String
+        disclosureConsent: Boolean
+    }
     input AuthorDetailsInput {
         firstName: String!
         lastName: String!
         email: String!
         institution: String!
     }
-
     type ManuscriptDetails {
         title: String
         subjects: [String]
@@ -44,7 +56,10 @@ export const typeDefs = gql`
         previouslySubmitted: [String!]
         cosubmission: [String!]
     }
-
+    type Suggestion {
+        fieldName: String!
+        value: String!
+    }
     input ManuscriptDetailsInput {
         title: String
         subjects: [String]
@@ -72,7 +87,7 @@ export const typeDefs = gql`
         changeSubmissionTitle(id: ID!, title: String!): Submission!
         deleteSubmission(id: ID!): ID
         saveAuthorPage(id: ID!, details: AuthorDetailsInput!): Submission!
-        saveFilesPage(id: ID!, coverLetter: String!): Submission!
+        saveFilesPage(id: ID!, coverLetter: String): Submission!
         saveDetailsPage(id: ID!, details: ManuscriptDetailsInput!): Submission!
         uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
     }
