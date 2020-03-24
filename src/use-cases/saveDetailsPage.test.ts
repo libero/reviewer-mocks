@@ -7,7 +7,7 @@ describe('saveDetailsPage', (): void => {
         const submissions = [
             {
                 id: v4(),
-                details: {
+                manuscriptDetails: {
                     title: '',
                     subjects: [],
                     previouslyDiscussed: '',
@@ -29,12 +29,12 @@ describe('saveDetailsPage', (): void => {
         expect(badRequest).toThrow();
     });
 
-    it('save author details of a submission', (): void => {
+    it('save manuscript details of a submission', (): void => {
         const submissionId = v4();
         const submissions = [
             {
                 id: submissionId,
-                details: {
+                manuscriptDetails: {
                     title: '',
                     subjects: [],
                     previouslyDiscussed: '',
@@ -54,13 +54,13 @@ describe('saveDetailsPage', (): void => {
 
         saveDetailsPage(submissions)(null, { id: submissionId, details: input });
         expect(submissions).toHaveLength(1);
-        expect(submissions[0].details.title).toBe('test');
-        expect(submissions[0].details.subjects).toHaveLength(1);
-        expect(submissions[0].details.subjects[0]).toBe('Cancer Biology');
-        expect(submissions[0].details.previouslyDiscussed).toBe('no');
-        expect(submissions[0].details.previouslySubmitted).toHaveLength(1);
-        expect(submissions[0].details.previouslySubmitted[0]).toBe('not-sure');
-        expect(submissions[0].details.cosubmisssion).toHaveLength(1);
-        expect(submissions[0].details.cosubmisssion[0]).toBe('certainly');
+        expect(submissions[0].manuscriptDetails.title).toBe('test');
+        expect(submissions[0].manuscriptDetails.subjects).toHaveLength(1);
+        expect(submissions[0].manuscriptDetails.subjects[0]).toBe('Cancer Biology');
+        expect(submissions[0].manuscriptDetails.previouslyDiscussed).toBe('no');
+        expect(submissions[0].manuscriptDetails.previouslySubmitted).toHaveLength(1);
+        expect(submissions[0].manuscriptDetails.previouslySubmitted[0]).toBe('not-sure');
+        expect(submissions[0].manuscriptDetails.cosubmisssion).toHaveLength(1);
+        expect(submissions[0].manuscriptDetails.cosubmisssion[0]).toBe('certainly');
     });
 });
