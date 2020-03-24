@@ -53,7 +53,7 @@ export const typeDefs = gql`
         title: String
         subjects: [String]
         previouslyDiscussed: String
-        previouslySubmitted: [String!]
+        previouslySubmitted: String
         cosubmission: [String!]
     }
     type Suggestion {
@@ -64,7 +64,7 @@ export const typeDefs = gql`
         title: String
         subjects: [String]
         previouslyDiscussed: String
-        previouslySubmitted: [String!]
+        previouslySubmitted: String
         cosubmission: [String!]
     }
 
