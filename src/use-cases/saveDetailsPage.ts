@@ -1,10 +1,9 @@
-export const saveDetailsPage = (submissions: Array<{ id: string; details: {} }>): ((_, { id, details }) => {}) => (
-    _,
-    { id, details = {} },
-): {} => {
+export const saveDetailsPage = (
+    submissions: Array<{ id: string; manuscriptDetails: {} }>,
+): ((_, { id, details }) => {}) => (_, { id, details = {} }): {} => {
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     if (submissionIndex !== -1) {
-        submissions[submissionIndex].details = details;
+        submissions[submissionIndex].manuscriptDetails = details;
         return submissions[submissionIndex];
     }
     throw new Error('could not find submission with id: ' + id);
