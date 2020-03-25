@@ -1,3 +1,6 @@
+import { PubSub } from 'apollo-server-express';
+import { getCurrentUser } from './getCurrentUser';
+
 enum FileStatus {
     CREATED = 'CREATED',
     UPLOADED = 'UPLOADED',
@@ -33,14 +36,25 @@ type Submission = {
     };
 };
 
-export const uploadManuscript = (submissions): ((_, { id, file, fileSize }) => Promise<Submission>) => async (
-    _,
-    { id, file },
-): Promise<Submission> => {
+async function wait(timeout): Promise<void> {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve();
+        }, timeout);
+    });
+}
+
+export const uploadManuscript = (
+    submissions,
+    pubsub: PubSub,
+): ((_, { id, file, fileSize }) => Promise<Submission>) => async (_, { id, file }): Promise<Submission> => {
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const user: any = getCurrentUser();
 
     // file = { path: '...' } only
     if (submissionIndex !== -1) {
+        const submission = submissions[submissionIndex];
         const manuscriptFile: File = {
             id: '0ee77f61-b89d-40cd-893e-88089359eb6b',
             type: FileType.MANUSCRIPT_SOURCE,
@@ -50,9 +64,18 @@ export const uploadManuscript = (submissions): ((_, { id, file, fileSize }) => P
             size: 1000,
             status: FileStatus.UPLOADED,
         };
-        submissions[submissionIndex].files
-            ? (submissions[submissionIndex].files.manuscriptFile = manuscriptFile)
-            : (submissions[submissionIndex].files = { manuscriptFile });
+        submission.files ? (submission.files.manuscriptFile = manuscriptFile) : (submission.files = { manuscriptFile });
+        for await (const percentage of [0, 25, 50, 75, 100]) {
+            await wait(100);
+            await pubsub.publish('UPLOAD_STATUS', {
+                manuscriptUploadProgress: {
+                    userId: user.id,
+                    filename: manuscriptFile.filename,
+                    fileId: manuscriptFile.id,
+                    percentage,
+                },
+            });
+        }
         return submissions[submissionIndex];
     }
 

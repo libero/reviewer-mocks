@@ -1,3 +1,5 @@
+import { PubSub } from 'apollo-server-express';
+
 import {
     getSubmissions,
     startSubmission,
@@ -8,9 +10,11 @@ import {
     saveDetailsPage,
     saveFilesPage,
     uploadManuscript,
+    manuscriptUploadProgress,
 } from '../use-cases';
 
 const submissions = [];
+const pubsub = new PubSub();
 
 export const resolvers = {
     Query: {
@@ -24,6 +28,9 @@ export const resolvers = {
         saveAuthorPage: saveAuthorPage(submissions),
         saveFilesPage: saveFilesPage(submissions),
         saveDetailsPage: saveDetailsPage(submissions),
-        uploadManuscript: uploadManuscript(submissions),
+        uploadManuscript: uploadManuscript(submissions, pubsub),
+    },
+    Subscriptions: {
+        manuscriptUploadProgress: manuscriptUploadProgress(pubsub),
     },
 };
