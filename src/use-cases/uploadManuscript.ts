@@ -52,7 +52,6 @@ export const uploadManuscript = (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const user: any = getCurrentUser();
 
-    // file = { path: '...' } only
     if (submissionIndex !== -1) {
         const submission = submissions[submissionIndex];
         const manuscriptFile: File = {
@@ -76,7 +75,7 @@ export const uploadManuscript = (
                 },
             });
         }
-        return submissions[submissionIndex];
+        return submission;
     }
 
     throw new Error("can't find submission: " + id);
