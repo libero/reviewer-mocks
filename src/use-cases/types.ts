@@ -30,5 +30,6 @@ export type Submission = {
     createdBy: string;
     files: {
         manuscriptFile?: File;
+        supportingFiles?: Array<File>;
     };
 };
