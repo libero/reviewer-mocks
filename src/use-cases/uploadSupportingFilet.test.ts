@@ -1,6 +1,6 @@
 import { uploadSupportingFile } from './uploadSupportingFile';
 
-describe('uploadManuscript', (): void => {
+describe('uploadSupportingFile', (): void => {
     it('Uploads a support file if submission exists', async (): Promise<void> => {
         const submissions = [{ id: 'A' }, { id: 'B' }];
         const submission = await uploadSupportingFile(submissions)(null, { id: 'A', fileSize: 40, file: {} });
