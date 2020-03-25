@@ -46,7 +46,7 @@ async function wait(timeout): Promise<void> {
 
 export const uploadManuscript = (
     submissions,
-    pubsub: PubSub,
+    pubsub: PubSub = new PubSub(), // set default so it won't break existing code
 ): ((_, { id, file, fileSize }) => Promise<Submission>) => async (_, { id, file }): Promise<Submission> => {
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
