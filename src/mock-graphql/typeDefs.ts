@@ -82,6 +82,13 @@ export const typeDefs = gql`
         getCurrentUser: User!
     }
 
+    type UploadProgress {
+        userId: ID!
+        filename: String!
+        fileId: ID!
+        percentage: String!
+    }
+
     type Mutation {
         startSubmission(articleType: String!): Submission!
         changeSubmissionTitle(id: ID!, title: String!): Submission!
@@ -91,5 +98,9 @@ export const typeDefs = gql`
         saveDetailsPage(id: ID!, details: ManuscriptDetailsInput!): Submission!
         uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
         uploadSupportingFile(id: ID!, file: Upload!, fileSize: Int!): Submission!
+    }
+
+    type Subscription {
+        manuscriptUploadProgress(filename: String!): UploadProgress
     }
 `;
