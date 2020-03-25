@@ -1,48 +1,7 @@
 import { PubSub } from 'apollo-server-express';
 import { getCurrentUser } from './getCurrentUser';
-
-enum FileStatus {
-    CREATED = 'CREATED',
-    UPLOADED = 'UPLOADED',
-    STORED = 'STORED',
-    CANCELLED = 'CANCELLED',
-}
-
-enum FileType {
-    MANUSCRIPT_SOURCE_PENDING = 'MANUSCRIPT_SOURCE_PENDING',
-    MANUSCRIPT_SOURCE = 'MANUSCRIPT_SOURCE',
-    SUPPORTING_FILE = 'SUPPORTING_FILE',
-}
-
-type File = {
-    id: string;
-    type: string;
-    filename: string;
-    url: string;
-    mimeType: string;
-    size: number;
-    status: string;
-};
-
-type Submission = {
-    id: string;
-    title: string;
-    updated: Date;
-    articleType: string;
-    status: string;
-    createdBy: string;
-    files: {
-        manuscriptFile?: File;
-    };
-};
-
-async function wait(timeout): Promise<void> {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve();
-        }, timeout);
-    });
-}
+import { FileStatus, FileType, File, Submission } from './types';
+import { wait } from '../utils';
 
 export const uploadManuscript = (
     submissions,
