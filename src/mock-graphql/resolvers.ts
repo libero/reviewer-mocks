@@ -32,7 +32,7 @@ export const resolvers = {
         uploadManuscript: uploadManuscript(submissions, pubsub),
         uploadSupportingFile: uploadSupportingFile(submissions, pubsub),
     },
-    Subscriptions: {
+    Subscription: {
         manuscriptUploadProgress: manuscriptUploadProgress(pubsub),
     },
 };
