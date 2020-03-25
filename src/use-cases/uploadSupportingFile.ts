@@ -34,7 +34,7 @@ export const uploadSupportingFile = (
         for await (const percentage of [0, 25, 50, 75, 100]) {
             await wait(100);
             await pubsub.publish('UPLOAD_STATUS', {
-                manuscriptUploadProgress: {
+                supportingUploadProgress: {
                     userId: user.id,
                     filename: supportingFile.filename,
                     fileId: supportingFile.id,

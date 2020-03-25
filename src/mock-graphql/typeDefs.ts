@@ -102,5 +102,6 @@ export const typeDefs = gql`
 
     type Subscription {
         manuscriptUploadProgress(filename: String!): UploadProgress
+        supportingUploadProgress(filename: String!): UploadProgress
     }
 `;
