@@ -5,7 +5,7 @@ export const fileUploadProgress = (pubsub: PubSub): { subscribe: ResolverFn } =>
         () => pubsub.asyncIterator('UPLOAD_STATUS'),
         (payload, variables, context) => {
             return (
-                payload.fileUploadProgress.userId === context.userId &&
+                // payload.fileUploadProgress.userId === context.userId &&
                 payload.fileUploadProgress.submissionId === variables.submissionId
             );
         },
