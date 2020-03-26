@@ -26,11 +26,13 @@ export const uploadManuscript = (
         for await (const percentage of [0, 25, 50, 75, 100]) {
             await wait(100);
             await pubsub.publish('UPLOAD_STATUS', {
-                manuscriptUploadProgress: {
+                fileUploadProgress: {
+                    submissionId: submission.id,
                     userId: user.id,
                     filename: manuscriptFile.filename,
                     fileId: manuscriptFile.id,
                     percentage,
+                    type: FileType.MANUSCRIPT_SOURCE,
                 },
             });
         }

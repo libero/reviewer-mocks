@@ -10,9 +10,8 @@ import {
     saveDetailsPage,
     saveFilesPage,
     uploadManuscript,
-    manuscriptUploadProgress,
+    fileUploadProgress,
     uploadSupportingFile,
-    supportingUploadProgress,
 } from '../use-cases';
 
 const submissions = [];
@@ -34,7 +33,6 @@ export const resolvers = {
         uploadSupportingFile: uploadSupportingFile(submissions, pubsub),
     },
     Subscription: {
-        manuscriptUploadProgress: manuscriptUploadProgress(pubsub),
-        supportingUploadProgress: supportingUploadProgress(pubsub),
+        fileUploadProgress: fileUploadProgress(pubsub),
     },
 };
