@@ -101,6 +101,6 @@ export const typeDefs = gql`
     }
 
     type Subscription {
-        fileUploadProgress(submissionId: Id!): UploadProgress
+        fileUploadProgress(submissionId: ID!): UploadProgress
     }
 `;
