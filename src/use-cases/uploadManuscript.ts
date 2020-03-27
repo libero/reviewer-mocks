@@ -14,7 +14,6 @@ export const uploadManuscript = (
     const { filename } = await file;
 
     if (submissionIndex !== -1) {
-        console.log(file);
         const submission = submissions[submissionIndex];
         const manuscriptFile: File = {
             id: '0ee77f61-b89d-40cd-893e-88089359eb6b',
