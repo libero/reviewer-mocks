@@ -15,11 +15,19 @@ import {
 import { typeDefs, resolvers } from './mock-graphql';
 import config from './config';
 
-function init(): Express {
+function init(): void {
     const app: Express = express();
     const apolloServer: ApolloServer = new ApolloServer({
         typeDefs,
         resolvers,
+        subscriptions: {
+            onConnect: (): void => {
+                console.log('Connected.');
+            },
+            onDisconnect: (): void => {
+                console.log('Disconnected.');
+            },
+        },
     });
 
     apolloServer.applyMiddleware({ app, path: '/graphql' });
@@ -35,7 +43,10 @@ function init(): Express {
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
 
-    return app;
+    const server = app.listen(config.port);
+    apolloServer.installSubscriptionHandlers(server);
+
+    console.log(`Service listening on port ${config.port}`);
 }
 
-init().listen(config.port, () => console.log(`Service listening on port ${config.port}`));
+init();
