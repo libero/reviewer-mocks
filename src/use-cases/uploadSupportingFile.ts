@@ -11,12 +11,14 @@ export const uploadSupportingFile = (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const user: any = getCurrentUser();
 
+    const { filename } = await file;
+
     if (submissionIndex !== -1) {
         const submission = submissions[submissionIndex];
         const supportingFile: File = {
             id: '0ee77f61-b89d-40cd-893e-88089359eb6b',
             type: FileType.SUPPORTING_FILE,
-            filename: file.path,
+            filename: filename,
             url: 'http://localhost/bucket/name.pdf',
             mimeType: 'application/pdf',
             size: 1000,
