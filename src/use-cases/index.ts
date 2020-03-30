@@ -17,6 +17,7 @@ export * from './uploadManuscript';
 export * from './extractScienceBeam';
 export * from './fileUploadProgress';
 export * from './uploadSupportingFile';
+export * from './getClientConfig';
 
 export const HealthCheck = () => (req: Request, res: Response): void => {
     res.json({ ok: true });
