@@ -30,6 +30,6 @@ COPY mock-data/ /app/mock-data/
 EXPOSE 3000
 
 HEALTHCHECK --interval=1m --timeout=1s \
-	CMD echo -e "GET /health\n\n" | nc localhost:3000
+	CMD echo -e "GET /health\n\n" | nc localhost:3003
 
 CMD ["node", "dist/main.js"]

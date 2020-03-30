@@ -43,10 +43,10 @@ function init(): void {
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
 
-    const server = app.listen(config.port);
+    const server = app.listen(3003);
     apolloServer.installSubscriptionHandlers(server);
 
-    console.log(`Service listening on port ${config.port}`);
+    console.log(`Service listening on port 3003`);
 }
 
 init();
