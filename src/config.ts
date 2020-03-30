@@ -1,7 +1,6 @@
 import { readFileSync } from 'fs';
 
 export interface ConfigType {
-    port: number;
     login_return_url: string;
     continuum_jwt_secret: string;
     continuum_return_url: string;
