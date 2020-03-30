@@ -87,6 +87,7 @@ export const typeDefs = gql`
         filename: String!
         fileId: ID!
         percentage: String!
+        type: String!
     }
 
     type Mutation {
