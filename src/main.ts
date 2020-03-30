@@ -11,6 +11,7 @@ import {
     GetPerson,
     getCurrentUserREST,
     extractScienceBeam,
+    getClientConfig,
 } from './use-cases';
 import { typeDefs, resolvers } from './mock-graphql';
 import config from './config';
@@ -33,6 +34,7 @@ function init(): void {
     apolloServer.applyMiddleware({ app, path: '/graphql' });
 
     app.get('/health', HealthCheck());
+    app.get('/config', getClientConfig());
     app.get('/submit', JournalSubmit(config, sign));
     app.get('/authenticate/*', Authenticate(config, sign));
     app.get('/profiles/*', GetProfile());
