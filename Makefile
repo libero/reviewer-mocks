@@ -3,8 +3,6 @@ IMAGE_TAG ?= "local"
 
 DOCKER_COMPOSE = IMAGE_TAG=${IMAGE_TAG} docker-compose -f docker-compose.build.yml
 
-PUSH_COMMAND = IMAGE_TAG=${IMAGE_TAG} .scripts/travis/push-image.sh
-
 get_deps:
 	yarn
 
@@ -16,6 +14,3 @@ test: get_deps
 
 build:
 	${DOCKER_COMPOSE} build reviewer-mocks
-
-push:
-	${PUSH_COMMAND} reviewer-mocks
