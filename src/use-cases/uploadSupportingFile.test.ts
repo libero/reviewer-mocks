@@ -3,9 +3,8 @@ import { uploadSupportingFile } from './uploadSupportingFile';
 describe('uploadSupportingFile', (): void => {
     it('Uploads a support file if submission exists', async (): Promise<void> => {
         const submissions = [{ id: 'A' }, { id: 'B' }];
-        const submission = await uploadSupportingFile(submissions)(null, { id: 'A', fileSize: 40, file: {} });
-        expect(submission).toBeTruthy();
-        const supportingFile = submission.files?.supportingFiles ? submission.files?.supportingFiles[0] : null;
+        const supportingFile = await uploadSupportingFile(submissions)(null, { id: 'A', fileSize: 40, file: {} });
+        expect(supportingFile).toBeTruthy();
         expect(supportingFile?.url).toBe('http://localhost/bucket/name.pdf');
     });
 
