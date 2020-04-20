@@ -1,7 +1,7 @@
-export const deleteSupportingFile = (submissions): ((_, { fileId, submissionId }) => Promise<boolean>) => async (
+export const deleteSupportingFile = (submissions): ((_, { fileId, submissionId }) => Promise<string>) => async (
     _,
     { fileId, submissionId },
-): Promise<boolean> => {
+): Promise<string> => {
     const submissionIndex = submissions.findIndex(submission => submission.id === submissionId);
 
     if (submissionIndex !== -1) {
@@ -11,7 +11,7 @@ export const deleteSupportingFile = (submissions): ((_, { fileId, submissionId }
         } else {
             throw new Error('No supporting files to delete');
         }
-        return true;
+        return fileId;
     }
 
     throw new Error("can't find submission: " + submissionId);

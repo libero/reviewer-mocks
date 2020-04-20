@@ -15,7 +15,7 @@ describe('deleteSupportingFile', (): void => {
             },
         ];
         const success = await deleteSupportingFile(submissions)(null, { fileId: 'someID', submissionId: 'A' });
-        expect(success).toBeTruthy();
+        expect(success).toBe('someID');
         const supportingFiles = submissions[0].files?.supportingFiles;
         expect(supportingFiles).toHaveLength(0);
     });

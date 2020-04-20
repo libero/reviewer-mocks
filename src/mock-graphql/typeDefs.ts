@@ -98,8 +98,8 @@ export const typeDefs = gql`
         saveFilesPage(id: ID!, coverLetter: String): Submission!
         saveDetailsPage(id: ID!, details: ManuscriptDetailsInput!): Submission!
         uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
-        uploadSupportingFile(id: ID!, file: Upload!, fileSize: Int!): Submission!
-        deleteSupportingFile(fileId: ID!, submissionId: ID!): Boolean!
+        uploadSupportingFile(id: ID!, file: Upload!, fileSize: Int!): File!
+        deleteSupportingFile(fileId: ID!, submissionId: ID!): String!
     }
 
     type Subscription {
