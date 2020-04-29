@@ -8,6 +8,23 @@ describe('uploadManuscript', (): void => {
         expect(submission.files?.manuscriptFile?.url).toBe('http://localhost/bucket/name.pdf');
     });
 
+    it('Returns suggestions after upload', async (): Promise<void> => {
+        const submissions = [{ id: 'A' }, { id: 'B' }];
+        const submission = await uploadManuscript(submissions)(null, {
+            id: 'A',
+            fileSize: 40,
+            file: {},
+        });
+        expect(submission).toBeTruthy();
+        expect(submission.files?.manuscriptFile?.url).toBe('http://localhost/bucket/name.pdf');
+        expect(submission).toHaveProperty('suggestions');
+        expect(submission.suggestions).toHaveLength(1);
+        expect(submission.suggestions[0]).toHaveProperty('fieldName');
+        expect(submission.suggestions[0].fieldName).toBe('title');
+        expect(submission.suggestions[0]).toHaveProperty('value');
+        expect(submission.suggestions[0].value).toBe('My first Manuscript');
+    });
+
     it('Throws if submission does not exist', async (): Promise<void> => {
         const submissions = [{ id: 'A' }, { id: 'B' }];
         await expect(uploadManuscript(submissions)(null, { id: 'C', fileSize: 40, file: {} })).rejects.toThrowError(
