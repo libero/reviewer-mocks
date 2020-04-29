@@ -21,11 +21,10 @@ export type File = {
     status: string;
 };
 
-export type MockSubmissionRepo = Array<{
-    id: string;
-    files: { coverLetter: string };
-    suggestions: Array<{ fieldName: string; value: string }>;
-}>;
+export type Suggestion = {
+    fieldName: string;
+    value: string;
+};
 
 export type Submission = {
     id: string;
@@ -38,4 +37,5 @@ export type Submission = {
         manuscriptFile?: File;
         supportingFiles?: Array<File>;
     };
+    suggestions: Array<Suggestion>;
 };
