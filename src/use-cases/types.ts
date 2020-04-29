@@ -21,12 +21,6 @@ export type File = {
     status: string;
 };
 
-export type MockSubmissionRepo = Array<{
-    id: string;
-    files: { coverLetter: string };
-    suggestions: Array<{ fieldName: string; value: string }>;
-}>;
-
 export type Submission = {
     id: string;
     title: string;
