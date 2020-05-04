@@ -19,6 +19,7 @@ export type File = {
     mimeType: string;
     size: number;
     status: string;
+    downloadLink: string;
 };
 
 export type Suggestion = {

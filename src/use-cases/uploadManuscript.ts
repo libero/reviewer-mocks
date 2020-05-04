@@ -23,6 +23,7 @@ export const uploadManuscript = (
             mimeType: 'application/pdf',
             size: 1000,
             status: FileStatus.UPLOADED,
+            downloadLink: 'http://localhost/bucket/name.pdf',
         };
         submission.files ? (submission.files.manuscriptFile = manuscriptFile) : (submission.files = { manuscriptFile });
         for await (const percentage of [0, 25, 50, 75, 100]) {
