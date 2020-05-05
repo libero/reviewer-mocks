@@ -24,6 +24,7 @@ export const uploadSupportingFile = (
             mimeType: 'application/pdf',
             size: 1000,
             status: FileStatus.UPLOADED,
+            downloadLink: 'http://localhost/bucket/name.pdf',
         };
         if (submission.files) {
             submission.files.supportingFiles = submission.files.supportingFiles
