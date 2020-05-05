@@ -13,6 +13,7 @@ import {
     fileUploadProgress,
     uploadSupportingFile,
     deleteSupportingFile,
+    saveEditorPage,
 } from '../use-cases';
 
 const submissions = [];
@@ -33,6 +34,7 @@ export const resolvers = {
         uploadManuscript: uploadManuscript(submissions, pubsub),
         uploadSupportingFile: uploadSupportingFile(submissions, pubsub),
         deleteSupportingFile: deleteSupportingFile(submissions),
+        saveEditorPage: saveEditorPage(submissions),
     },
     Subscription: {
         fileUploadProgress: fileUploadProgress(pubsub),
