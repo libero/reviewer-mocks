@@ -1,6 +1,6 @@
 import getMockData from '../getMockData';
 
-export const getEditors = (): ((_, { role }) => {}) => (_, { role }): {} => {
+export const getEditors = (): ((_, { role: string }) => {}) => (_, { role }): {} => {
     let editors: object[] = [];
     if (role == 'seniorEditors') {
         editors = getMockData('seniorEditors.json') as Array<object>;
