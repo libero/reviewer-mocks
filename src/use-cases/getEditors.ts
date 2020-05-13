@@ -1,7 +1,6 @@
-import { Request, Response } from 'express';
 import getMockData from '../getMockData';
 
-export const getEditors = (role: string) => (req: Request, res: Response): void => {
+export const getEditors = (): ((_, { role: string }) => {}) => (_, { role }): {} => {
     let editors: object[] = [];
     if (role == 'seniorEditors') {
         editors = getMockData('seniorEditors.json') as Array<object>;
@@ -9,5 +8,5 @@ export const getEditors = (role: string) => (req: Request, res: Response): void 
         editors = getMockData('reviewingEditors.json') as Array<object>;
     }
 
-    res.json(editors);
+    return editors;
 };
