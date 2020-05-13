@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { GetEditors } from './getEditors';
+import { getEditors } from './getEditors';
 
 describe('get editors', (): void => {
     it('returns a list of senior editors', (): void => {
@@ -7,7 +7,7 @@ describe('get editors', (): void => {
         const mockResponse: Response = {} as Response;
         mockResponse.json = jest.fn();
 
-        GetEditors('seniorEditors')(mockRequest, mockResponse);
+        getEditors('seniorEditors')(mockRequest, mockResponse);
 
         const response = (mockResponse.json as jest.Mock).mock.calls[0][0];
         expect(mockResponse.json).toHaveBeenCalledTimes(1);
@@ -32,7 +32,7 @@ describe('get editors', (): void => {
         const mockResponse: Response = {} as Response;
         mockResponse.json = jest.fn();
 
-        GetEditors('reviewingEditors')(mockRequest, mockResponse);
+        getEditors('reviewingEditors')(mockRequest, mockResponse);
 
         const response = (mockResponse.json as jest.Mock).mock.calls[0][0];
         expect(mockResponse.json).toHaveBeenCalledTimes(1);

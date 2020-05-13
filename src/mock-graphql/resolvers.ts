@@ -14,6 +14,7 @@ import {
     uploadSupportingFile,
     deleteSupportingFile,
     saveEditorPage,
+    getEditors,
 } from '../use-cases';
 
 const submissions = [];
@@ -24,6 +25,7 @@ export const resolvers = {
         getCurrentUser,
         getSubmissions: getSubmissions(submissions),
         getSubmission: getSubmission(submissions),
+        getEditors,
     },
     Mutation: {
         startSubmission: startSubmission(submissions),
