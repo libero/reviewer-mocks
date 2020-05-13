@@ -25,7 +25,7 @@ export const resolvers = {
         getCurrentUser,
         getSubmissions: getSubmissions(submissions),
         getSubmission: getSubmission(submissions),
-        getEditors,
+        getEditors: getEditors(),
     },
     Mutation: {
         startSubmission: startSubmission(submissions),
