@@ -1,0 +1,35 @@
+[
+    {
+        "id": "0da30b85",
+        "name": "Ivan Dikic",
+        "aff": "Goethe University Frankfurt",
+        "focuses": [
+            "ubiquitination",
+            "autophagy",
+            "endocytosis",
+            "inflammation",
+            "cancer biology"
+        ],
+        "expertises": ["Biochemistry and Chemical Biology", "Cell Biology"]
+    },
+    {
+        "id": "007",
+        "name": "James Bond",
+        "aff": "MI6",
+        "focuses": [
+            "death",
+            "destruction"
+        ],
+        "expertises": ["Firearms", "Spying"]
+    },
+    {
+        "id": "006",
+        "name": "Alec Trevelyan",
+        "aff": "MI6",
+        "focuses": [
+            "self",
+            "theft"
+        ],
+        "expertises": ["Lying", "Deceit"]
+    }
+]

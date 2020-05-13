@@ -118,12 +118,6 @@ export const typeDefs = gql`
         email: String!
     }
 
-    type Query {
-        getSubmissions: [Submission!]!
-        getSubmission(id: ID!): Submission
-        getCurrentUser: User!
-    }
-
     type UploadProgress {
         userId: ID!
         filename: String!
@@ -160,6 +154,21 @@ export const typeDefs = gql`
         questionId: ID!
         text: String!
         answer: String!
+    }
+
+    type EditorAlias {
+        id: String
+        name: String
+        aff: String
+        focuses: [String]
+        expertises: [String]
+    }
+
+    type Query {
+        getSubmissions: [Submission!]!
+        getSubmission(id: ID!): Submission
+        getCurrentUser: User!
+        getEditors(role: String): [EditorAlias]
     }
 
     type Mutation {
