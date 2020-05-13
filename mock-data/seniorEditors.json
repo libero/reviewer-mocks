@@ -1,0 +1,32 @@
+[
+    {
+        "id": "0aa30b85",
+        "name": "Reviewer1",
+        "aff": "Rev1 Uni",
+        "focuses": [
+            "f1a",
+            "f1b"
+        ],
+        "expertises": ["e1a", "e1b"]
+    },
+    {
+        "id": "0aa30b86",
+        "name": "Reviewer2",
+        "aff": "Rev2 Uni",
+        "focuses": [
+            "f2a",
+            "f2b"
+        ],
+        "expertises": ["e2a", "e2b"]
+    },
+    {
+        "id": "0aa30b87",
+        "name": "Reviewer3",
+        "aff": "Rev3 Uni",
+        "focuses": [
+            "f3a",
+            "f3b"
+        ],
+        "expertises": ["e3a", "e3b"]
+    }
+]

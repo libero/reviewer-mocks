@@ -20,6 +20,7 @@ export * from './uploadSupportingFile';
 export * from './getClientConfig';
 export * from './deleteSupportingFile';
 export * from './saveEditorPage';
+export * from './getEditors';
 
 export const HealthCheck = () => (req: Request, res: Response): void => {
     res.json({ ok: true });
