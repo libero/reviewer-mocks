@@ -1,12 +1,5 @@
-import getMockData from '../getMockData';
+import { getEditorsForUserApi } from './userApi';
 
 export const getEditors = (): ((_, { role: string }) => {}) => (_, { role }): {} => {
-    let editors: object[] = [];
-    if (role == 'seniorEditors') {
-        editors = getMockData('seniorEditors.json') as Array<object>;
-    } else if (role == 'reviewingEditors') {
-        editors = getMockData('reviewingEditors.json') as Array<object>;
-    }
-
-    return editors;
+    return getEditorsForUserApi(role);
 };

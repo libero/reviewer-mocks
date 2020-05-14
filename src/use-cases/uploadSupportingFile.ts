@@ -1,4 +1,4 @@
-import { getCurrentUser } from './getCurrentUser';
+import { getCurrentUser } from './userApi';
 import { FileStatus, FileType, File } from './types';
 import { wait } from '../utils';
 import { PubSub } from 'apollo-server-express';
