@@ -5,6 +5,16 @@ export const getCurrentUser = (): object => {
     return getMockData('currentUser.json');
 };
 
+export const getEditorsForUserApi = (role: string): object[] => {
+    let editors: object[] = [];
+    if (role == 'seniorEditors') {
+        editors = getMockData('seniorEditors.json') as Array<object>;
+    } else if (role == 'reviewingEditors') {
+        editors = getMockData('reviewingEditors.json') as Array<object>;
+    }
+    return editors;
+};
+
 export const getSubFromAuthorizationHeader = (header: string): string => {
     /* This routine doesn't validate the token. Just decodes it and returns the user id that
        tests can request a different user than the default to test resource ownership.
@@ -15,7 +25,7 @@ export const getSubFromAuthorizationHeader = (header: string): string => {
     return token.sub;
 };
 
-export const getCurrentUserREST = () => (req: Request, res: Response): void => {
+export const userApiGetCurrentUser = () => (req: Request, res: Response): void => {
     const authorization = req.headers.authorization;
     if (typeof authorization !== 'undefined') {
         try {
@@ -24,4 +34,9 @@ export const getCurrentUserREST = () => (req: Request, res: Response): void => {
         } catch (e) {}
     }
     res.json(getCurrentUser());
+};
+
+export const userApiGetEditors = () => (req: Request, res: Response): void => {
+    const role = req.query.role;
+    res.json(getEditorsForUserApi(role));
 };

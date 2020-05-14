@@ -9,9 +9,9 @@ import {
     GetProfile,
     RedirectLocation,
     GetPerson,
-    getCurrentUserREST,
+    userApiGetCurrentUser,
+    userApiGetEditors,
     extractScienceBeam,
-    getClientConfig,
 } from './use-cases';
 import { typeDefs, resolvers } from './mock-graphql';
 import config from './config';
@@ -31,16 +31,23 @@ function init(): void {
         },
     });
 
-    apolloServer.applyMiddleware({ app, path: '/graphql' });
-
     app.get('/health', HealthCheck());
-    app.get('/config', getClientConfig());
+
+    // Mocks for reviewer-client are all in GQL
+    apolloServer.applyMiddleware({ app, path: '/graphql' });
+    // ... reviewer-client also needs this (LOGIN_URL)
     app.get('/submit', JournalSubmit(config, sign));
+
+    // Mocks for reviewer-submission
     app.get('/authenticate/*', Authenticate(config, sign));
+    app.post('/science-beam/convert', extractScienceBeam());
+    // ... mocking of User API
+    app.get('/current-user', userApiGetCurrentUser());
+    app.get('/editors', userApiGetEditors());
+
+    // Mocks of journal for continuum-adaptor
     app.get('/profiles/*', GetProfile());
     app.get('/people/*', GetPerson());
-    app.get('/current-user', getCurrentUserREST());
-    app.post('/science-beam/convert', extractScienceBeam());
 
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
