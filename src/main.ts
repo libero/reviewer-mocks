@@ -9,6 +9,7 @@ import {
     GetProfile,
     RedirectLocation,
     GetPerson,
+    GetPeople,
     userApiGetCurrentUser,
     userApiGetEditors,
     extractScienceBeam,
@@ -48,6 +49,7 @@ function init(): void {
     // Mocks of journal for continuum-adaptor
     app.get('/profiles/*', GetProfile());
     app.get('/people/*', GetPerson());
+    app.get('/people', GetPeople());
 
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
