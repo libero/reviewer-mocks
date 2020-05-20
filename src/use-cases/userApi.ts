@@ -7,9 +7,9 @@ export const getCurrentUser = (): object => {
 
 export const getEditorsForUserApi = (role: string): object[] => {
     let editors: object[] = [];
-    if (role == 'seniorEditors') {
+    if (role == 'seniorEditor') {
         editors = getMockData('seniorEditors.json') as Array<object>;
-    } else if (role == 'reviewingEditors') {
+    } else if (role == 'reviewingEditor') {
         editors = getMockData('reviewingEditors.json') as Array<object>;
     }
     return editors;

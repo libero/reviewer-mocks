@@ -2,7 +2,7 @@ import { getEditors } from './getEditors';
 
 describe('get editors', (): void => {
     it('returns a list of senior editors', (): void => {
-        const editors = getEditors()({}, { role: 'seniorEditors' });
+        const editors = getEditors()({}, { role: 'seniorEditor' });
 
         expect(editors).toHaveLength(3);
         expect(editors[0]).toHaveProperty('id');
@@ -21,7 +21,7 @@ describe('get editors', (): void => {
         expect(editors[0].expertises).toHaveLength(2);
     });
     it('returns a list of reviewing editors', (): void => {
-        const editors = getEditors()({}, { role: 'reviewingEditors' });
+        const editors = getEditors()({}, { role: 'reviewingEditor' });
 
         expect(editors).toHaveLength(3);
         expect(editors[1]).toHaveProperty('id');
