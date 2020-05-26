@@ -1,7 +1,11 @@
+import { logger } from '../logger';
+
 export const deleteSupportingFile = (submissions): ((_, { fileId, submissionId }) => Promise<string>) => async (
     _,
     { fileId, submissionId },
 ): Promise<string> => {
+    logger.info(`deleteSupportingFile(${fileId}, ${submissionId})`);
+
     const submissionIndex = submissions.findIndex(submission => submission.id === submissionId);
 
     if (submissionIndex !== -1) {
