@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 
 export interface ConfigType {
     port: number;
@@ -11,7 +11,7 @@ export interface ConfigType {
 }
 
 const configPath = process.env.CONFIG_PATH ? process.env.CONFIG_PATH : '/etc/reviewer/config.json';
-const config: ConfigType = JSON.parse(readFileSync(configPath, 'utf8'));
+const config: ConfigType = existsSync(configPath) ? JSON.parse(readFileSync(configPath, 'utf8')) : {};
 
 config.defaultMockDataDirectoryPath = '/app/mock-data/';
 config.mockDataDirectoryPath = process.env.DATA_DIRECTORY_PATH

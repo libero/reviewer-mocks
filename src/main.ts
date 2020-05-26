@@ -47,6 +47,11 @@ function init(): http.Server {
         },
     });
 
+    app.use('/', (req: Request, _res: Response, next) => {
+        console.log(`${req.method} ${req.path}`, {});
+        next();
+    });
+
     app.get('/health', HealthCheck());
 
     // Mocks for reviewer-client are all in GQL
@@ -70,10 +75,6 @@ function init(): http.Server {
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
 
-    app.use('/', (req: Request, _res: Response, next) => {
-        console.log(`${req.method} ${req.path}`, {});
-        next();
-    });
     console.log(`Starting service on port ${config.port}`);
 
     const server = app.listen(3003);
