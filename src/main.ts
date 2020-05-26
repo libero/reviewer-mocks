@@ -1,5 +1,6 @@
 import express from 'express';
-import { Express } from 'express';
+import * as http from 'http';
+import { Express, Request, Response } from 'express';
 import { sign } from 'jsonwebtoken';
 import { ApolloServer } from 'apollo-server-express';
 import {
@@ -17,8 +18,22 @@ import {
 import { typeDefs, resolvers } from './mock-graphql';
 import config from './config';
 
-function init(): void {
+function dumpConfig(): void {
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+    const outConfig = (({ port, continuum_return_url, login_return_url, mockDataDirectoryPath }) => ({
+        port,
+        continuum_return_url,
+        login_return_url,
+        mockDataDirectoryPath,
+    }))(config);
+
+    console.log(`Configuration ${JSON.stringify(outConfig, null, 4)}`);
+}
+
+function init(): http.Server {
+    dumpConfig();
     const app: Express = express();
+    console.log(`Creating ApolloServer`);
     const apolloServer: ApolloServer = new ApolloServer({
         typeDefs,
         resolvers,
@@ -35,6 +50,7 @@ function init(): void {
     app.get('/health', HealthCheck());
 
     // Mocks for reviewer-client are all in GQL
+    console.log(`Applying middleware for graphql`);
     apolloServer.applyMiddleware({ app, path: '/graphql' });
     // ... reviewer-client also needs this (LOGIN_URL)
     app.get('/submit', JournalSubmit(config, sign));
@@ -54,10 +70,32 @@ function init(): void {
     // used for integration tests
     app.get('/redirect_location_for_intergration_test', RedirectLocation());
 
+    app.use('/', (req: Request, _res: Response, next) => {
+        console.log(`${req.method} ${req.path}`, {});
+        next();
+    });
+    console.log(`Starting service on port ${config.port}`);
+
     const server = app.listen(3003);
     apolloServer.installSubscriptionHandlers(server);
-
-    console.log(`Service listening on port 3003`);
+    console.log(`Service listening on port ${config.port}`);
+    return server;
 }
 
-init();
+function main(): void {
+    const serverHandle = init();
+
+    process.on('SIGINT', () => {
+        serverHandle.close(() => {
+            process.exit(0);
+        });
+    });
+
+    process.on('SIGTERM', () => {
+        serverHandle.close(() => {
+            process.exit(0);
+        });
+    });
+}
+
+main();
