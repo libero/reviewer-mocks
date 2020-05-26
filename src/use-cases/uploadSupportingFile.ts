@@ -3,11 +3,13 @@ import { FileStatus, FileType, File } from './types';
 import { wait } from '../utils';
 import { PubSub } from 'apollo-server-express';
 import { v4 } from 'uuid';
+import { logger } from '../logger';
 
 export const uploadSupportingFile = (
     submissions,
     pubsub: PubSub = new PubSub(), // set default so it won't break existing code
 ): ((_, { id, file, fileSize }) => Promise<File>) => async (_, { id, file }): Promise<File> => {
+    logger.info(`uploadSupportingFile(${id}, ${JSON.stringify(file)})`);
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const user: any = getCurrentUser();

@@ -1,6 +1,8 @@
+import { logger } from '../logger';
 export const saveFilesPage = (
     submissions: Array<{ id: string; files: { coverLetter: string } }>,
 ): ((_, { id, coverLetter }) => {}) => (_, { id, coverLetter = '' }): {} => {
+    logger.info(`saveFilesPage(${id})`);
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     if (submissionIndex !== -1) {
         submissions[submissionIndex].files

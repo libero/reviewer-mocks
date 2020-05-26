@@ -2,11 +2,13 @@ import { PubSub } from 'apollo-server-express';
 import { getCurrentUser } from './userApi';
 import { FileStatus, FileType, File, Submission } from './types';
 import { wait } from '../utils';
+import { logger } from '../logger';
 
 export const uploadManuscript = (
     submissions,
     pubsub: PubSub = new PubSub(), // set default so it won't break existing code
 ): ((_, { id, file, fileSize }) => Promise<Submission>) => async (_, { id, file }): Promise<Submission> => {
+    logger.info(`uploadManuscript(${id}, ${JSON.stringify(file)})`);
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const user: any = getCurrentUser();
