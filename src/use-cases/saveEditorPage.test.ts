@@ -33,7 +33,7 @@ describe('saveEditorPage', (): void => {
             opposedReviewersReason: 'probably a reason',
         };
 
-        const badRequest = (): object => saveEditorPage(submissions)(null, { id: submissionId, editorDetails: input });
+        const badRequest = (): object => saveEditorPage(submissions)(null, { id: submissionId, details: input });
         expect(badRequest).toThrow();
     });
 
@@ -68,7 +68,7 @@ describe('saveEditorPage', (): void => {
             opposedReviewersReason: 'probably a reason',
         };
 
-        saveEditorPage(submissions)(null, { id: submissionId, editorDetails: input });
+        saveEditorPage(submissions)(null, { id: submissionId, details: input });
         expect(submissions).toHaveLength(1);
         expect(submissions[0].editorDetails).toEqual(input);
     });
