@@ -85,6 +85,12 @@ export const typeDefs = gql`
         submitterSignature: String
         disclosureConsent: Boolean
     }
+
+    input DisclosureDetailsInput {
+        submitterSignature: String
+        disclosureConsent: Boolean
+    }
+
     input AuthorDetailsInput {
         firstName: String!
         lastName: String!
@@ -177,6 +183,7 @@ export const typeDefs = gql`
         submitSurveyResponse(surveyId: String, submissionId: String, answers: [InputSurveyAnswer]!): SurveyResponse!
         saveEditorPage(id: ID!, details: EditorDetailsInput!): Submission!
         saveAuthorPage(id: ID!, details: AuthorDetailsInput!): Submission!
+        saveDisclosurePage(id: ID!, details: DisclosureDetailsInput!): Submission!
         uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
         deleteManuscript(fileId: ID!, submissionId: ID!): Boolean!
         uploadSupportingFile(id: ID!, file: Upload!, fileSize: Int!): File!

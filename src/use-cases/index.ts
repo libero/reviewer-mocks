@@ -11,6 +11,7 @@ export * from './getPerson';
 export * from './userApi';
 export * from './redirectLocation';
 export * from './saveAuthorPage';
+export * from './saveDisclosurePage';
 export * from './saveFilesPage';
 export * from './saveDetailsPage';
 export * from './uploadManuscript';
