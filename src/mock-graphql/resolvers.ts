@@ -6,6 +6,7 @@ import {
     getCurrentUser,
     getSubmission,
     deleteSubmission,
+    saveDisclosurePage,
     saveAuthorPage,
     saveDetailsPage,
     saveFilesPage,
@@ -30,6 +31,7 @@ export const resolvers = {
     Mutation: {
         startSubmission: startSubmission(submissions),
         deleteSubmission: deleteSubmission(submissions),
+        saveDisclosurePage: saveDisclosurePage(submissions),
         saveAuthorPage: saveAuthorPage(submissions),
         saveFilesPage: saveFilesPage(submissions),
         saveDetailsPage: saveDetailsPage(submissions),
