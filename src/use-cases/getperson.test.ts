@@ -22,8 +22,21 @@ describe('get person', (): void => {
         expect(mockResponse.json).toHaveBeenCalledTimes(1);
         expect(typeof (mockResponse.json as jest.Mock).mock.calls[0][0]).toBe('object');
         const people = (mockResponse.json as jest.Mock).mock.calls[0][0].items;
-        expect(people).toHaveLength(2);
+        expect(people).toHaveLength(4);
         expect(people[0]).toMatchObject({
+            id: '9000011',
+            type: {
+                id: 'senior-editor',
+                label: 'Senior Editor',
+            },
+            name: {
+                surname: 'Tt2',
+                givenNames: 'Jj',
+                preferred: 'Jj Tt2',
+                index: 'Tt, Jj',
+            },
+        });
+        expect(people[1]).toMatchObject({
             id: '9000001',
             type: {
                 id: 'senior-editor',
@@ -36,7 +49,20 @@ describe('get person', (): void => {
                 index: 'Tt, Jj',
             },
         });
-        expect(people[1]).toMatchObject({
+        expect(people[2]).toMatchObject({
+            id: '9000012',
+            type: {
+                id: 'senior-editor',
+                label: 'Senior Editor',
+            },
+            name: {
+                surname: 'Ww2',
+                givenNames: 'Aa',
+                preferred: 'Aa Ww2',
+                index: 'Ww, Aa',
+            },
+        });
+        expect(people[3]).toMatchObject({
             id: '9000002',
             type: {
                 id: 'senior-editor',
@@ -60,8 +86,21 @@ describe('get person', (): void => {
         expect(mockResponse.json).toHaveBeenCalledTimes(1);
         expect(typeof (mockResponse.json as jest.Mock).mock.calls[0][0]).toBe('object');
         const people = (mockResponse.json as jest.Mock).mock.calls[0][0].items;
-        expect(people).toHaveLength(2);
+        expect(people).toHaveLength(4);
         expect(people[0]).toMatchObject({
+            id: 'a0000011',
+            type: {
+                id: 'reviewing-editor',
+                label: 'Reviewing Editor',
+            },
+            name: {
+                surname: 'Zz2',
+                givenNames: 'Ww',
+                preferred: 'Ww Zz2',
+                index: 'Zz, Ww',
+            },
+        });
+        expect(people[1]).toMatchObject({
             id: 'a0000001',
             type: {
                 id: 'reviewing-editor',
@@ -74,7 +113,20 @@ describe('get person', (): void => {
                 index: 'Zz, Ww',
             },
         });
-        expect(people[1]).toMatchObject({
+        expect(people[2]).toMatchObject({
+            id: 'a0000012',
+            type: {
+                id: 'reviewing-editor',
+                label: 'Reviewing Editor',
+            },
+            name: {
+                surname: 'Zz2',
+                givenNames: 'Mía Mm',
+                preferred: 'Mía Mm Zz2',
+                index: 'Zz, Mía Mm',
+            },
+        });
+        expect(people[3]).toMatchObject({
             id: 'a0000002',
             type: {
                 id: 'reviewing-editor',
