@@ -137,7 +137,7 @@ export const typeDefs = gql`
         created: DateTime!
         updated: DateTime
         surveyId: String!
-        manuscriptId: ID!
+        submissionId: ID!
         response: SurveyQuestionsAndAnswers
     }
 
