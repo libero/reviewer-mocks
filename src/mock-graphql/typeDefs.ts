@@ -191,9 +191,42 @@ export const typeDefs = gql`
         saveFilesPage(id: ID!, coverLetter: String): Submission!
         saveDetailsPage(id: ID!, details: ManuscriptDetailsInput!): Submission!
         submit(id: ID!): Submission!
+        submitSurveyResponse(surveyId: String, submissionId: String, answers: [InputSurveyAnswer]!): SurveyResponse!
     }
 
     type Subscription {
         fileUploadProgress(submissionId: ID!): UploadProgress
+    }
+
+    scalar DateTime
+
+    type SurveyResponse {
+        id: ID!
+        created: DateTime!
+        updated: DateTime
+        surveyId: String!
+        submissionId: ID!
+        response: SurveyQuestionsAndAnswers
+    }
+
+    type SurveyQuestionsAndAnswers {
+        questions: [SurveyQuestion!]
+        answers: [SurveyAnswer!]
+    }
+
+    type SurveyQuestion {
+        id: ID!
+        question: String!
+    }
+
+    type SurveyAnswer {
+        questionId: ID!
+        answer: String!
+    }
+
+    input InputSurveyAnswer {
+        questionId: ID!
+        text: String!
+        answer: String!
     }
 `;

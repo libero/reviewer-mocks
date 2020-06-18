@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-import { submitSurveyResponse } from './submitSurveryResponse';
+import { submitSurveyResponse } from './submitSurveyResponse';
 
 describe('submitSurveyResponse', (): void => {
     it('returns survey response', (): void => {

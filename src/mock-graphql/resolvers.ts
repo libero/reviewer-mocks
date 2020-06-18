@@ -16,6 +16,7 @@ import {
     deleteSupportingFile,
     saveEditorPage,
     getEditors,
+    submitSurveyResponse,
 } from '../use-cases';
 
 const submissions = [];
@@ -39,6 +40,7 @@ export const resolvers = {
         uploadSupportingFile: uploadSupportingFile(submissions, pubsub),
         deleteSupportingFile: deleteSupportingFile(submissions),
         saveEditorPage: saveEditorPage(submissions),
+        submitSurveyResponse,
     },
     Subscription: {
         fileUploadProgress: fileUploadProgress(pubsub),

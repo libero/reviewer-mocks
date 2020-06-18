@@ -21,6 +21,7 @@ export * from './uploadSupportingFile';
 export * from './deleteSupportingFile';
 export * from './saveEditorPage';
 export * from './getEditors';
+export * from './submitSurveyResponse';
 
 export const HealthCheck = () => (req: Request, res: Response): void => {
     res.json({ ok: true });
