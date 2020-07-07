@@ -19,6 +19,6 @@ describe('submit', () => {
 
         expect(sign).toHaveBeenCalledTimes(1);
         expect(mockResponse.redirect).toHaveBeenCalledTimes(1);
-        expect(mockResponse.redirect).toHaveBeenCalledWith('http://authurl/authenticate#signed_jwt_token');
+        expect(mockResponse.redirect).toHaveBeenCalledWith('http://authurl/authenticate?token=signed_jwt_token');
     });
 });
