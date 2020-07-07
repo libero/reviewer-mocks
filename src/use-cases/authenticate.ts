@@ -10,7 +10,7 @@ export const Authenticate = (config: ConfigType, sign) => (req: Request, resp: R
         expiresIn: '1d',
     });
 
-    const redirectUrl = config.login_return_url + '#' + token;
+    const redirectUrl = config.login_return_url + '?token=' + token;
 
     resp.redirect(redirectUrl);
 };

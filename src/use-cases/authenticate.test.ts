@@ -9,7 +9,7 @@ describe('authenticate', () => {
         mockResponse.redirect = jest.fn();
         const config = ({
             authentication_jwt_secret: 'jwt_secret',
-            login_return_url: 'http://client/',
+            login_return_url: 'http://client',
         } as unknown) as ConfigType;
         const sign = jest.fn();
 
@@ -19,6 +19,6 @@ describe('authenticate', () => {
 
         expect(sign).toHaveBeenCalledTimes(1);
         expect(mockResponse.redirect).toHaveBeenCalledTimes(1);
-        expect(mockResponse.redirect).toHaveBeenCalledWith('http://client/#signed_jwt_token');
+        expect(mockResponse.redirect).toHaveBeenCalledWith('http://client?token=signed_jwt_token');
     });
 });
