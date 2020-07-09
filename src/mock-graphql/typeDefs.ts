@@ -27,6 +27,7 @@ export const typeDefs = gql`
         editorDetails: EditorDetails
         disclosure: DisclosureDetails
         suggestions: [Suggestion]
+        status: String
     }
 
     type AuthorDetails {
