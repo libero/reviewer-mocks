@@ -7,6 +7,7 @@ describe('saveDisclosurePage', (): void => {
         const submissions = [
             {
                 id: v4(),
+                lastStepVisited: 'editors',
                 disclosure: {
                     submitterSignature: '',
                     disclosureConsent: false,
@@ -28,6 +29,7 @@ describe('saveDisclosurePage', (): void => {
         const submissions = [
             {
                 id: submissionId,
+                lastStepVisited: 'editors',
                 disclosure: {
                     submitterSignature: '',
                     disclosureConsent: false,
@@ -44,5 +46,6 @@ describe('saveDisclosurePage', (): void => {
         expect(submissions).toHaveLength(1);
         expect(submissions[0].disclosure.submitterSignature).toBe('mickey mouse');
         expect(submissions[0].disclosure.disclosureConsent).toBe(true);
+        expect(submissions[0].lastStepVisited).toBe(`/submit/${submissionId}/disclosure`);
     });
 });

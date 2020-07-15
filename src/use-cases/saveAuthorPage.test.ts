@@ -7,6 +7,7 @@ describe('saveAuthorPage', (): void => {
         const submissions = [
             {
                 id: v4(),
+                lastStepVisited: 'author',
                 author: {
                     firstName: '',
                     lastName: '',
@@ -32,6 +33,7 @@ describe('saveAuthorPage', (): void => {
         const submissions = [
             {
                 id: submissionId,
+                lastStepVisited: 'author',
                 author: {
                     firstName: '',
                     lastName: '',
@@ -54,5 +56,6 @@ describe('saveAuthorPage', (): void => {
         expect(submissions[0].author.lastName).toBe('Windsor');
         expect(submissions[0].author.email).toBe('bob@nowhere.com');
         expect(submissions[0].author.institution).toBe('eLife');
+        expect(submissions[0].lastStepVisited).toBe(`/submit/${submissionId}/author`);
     });
 });
