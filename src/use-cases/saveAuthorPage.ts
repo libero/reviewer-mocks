@@ -5,9 +5,10 @@ export const saveAuthorPage = (
     logger.info(`saveAuthorPage(${id})`);
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     if (submissionIndex !== -1) {
-        submissions[submissionIndex].author = details;
-        submissions[submissionIndex].lastStepVisited = 'author';
-        return submissions[submissionIndex];
+        const submission = submissions[submissionIndex];
+        submission.author = details;
+        submission.lastStepVisited = `/submit/${submission.id}/author`;
+        return submission;
     }
     throw new Error('could not find submission with id: ' + id);
 };

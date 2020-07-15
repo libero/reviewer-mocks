@@ -64,5 +64,6 @@ describe('saveDetailsPage', (): void => {
         expect(submissions[0].manuscriptDetails.previouslySubmitted[0]).toBe('not-sure');
         expect(submissions[0].manuscriptDetails.cosubmisssion).toHaveLength(1);
         expect(submissions[0].manuscriptDetails.cosubmisssion[0]).toBe('certainly');
+        expect(submissions[0].lastStepVisited).toBe(`/submit/${submissionId}/details`);
     });
 });

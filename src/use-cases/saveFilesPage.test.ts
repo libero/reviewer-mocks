@@ -28,6 +28,7 @@ describe('saveFilesPage', (): void => {
         saveFilesPage(submissions)(null, { id: submissionId, coverLetter: 'test' });
         expect(submissions).toHaveLength(1);
         expect(submissions[0].files.coverLetter).toBe('test');
+        expect(submissions[0].lastStepVisited).toBe(`/submit/${submissionId}/files`);
     });
     it('save coverLetter of a submission if it has no files property', (): void => {
         const submissionId = v4();

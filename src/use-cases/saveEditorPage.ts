@@ -5,9 +5,10 @@ export const saveEditorPage = (
     logger.info(`saveEditorPage(${id})`);
     const submissionIndex = submissions.findIndex(submission => submission.id === id);
     if (submissionIndex !== -1) {
-        submissions[submissionIndex].editorDetails = details;
-        submissions[submissionIndex].lastStepVisited = 'editors';
-        return submissions[submissionIndex];
+        const submission = submissions[submissionIndex];
+        submission.editorDetails = details;
+        submission.lastStepVisited = `/submit/${submission.id}/editors`;
+        return submission;
     }
     throw new Error('could not find submission with id: ' + id);
 };

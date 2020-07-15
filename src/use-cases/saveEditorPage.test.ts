@@ -73,5 +73,6 @@ describe('saveEditorPage', (): void => {
         saveEditorPage(submissions)(null, { id: submissionId, details: input });
         expect(submissions).toHaveLength(1);
         expect(submissions[0].editorDetails).toEqual(input);
+        expect(submissions[0].lastStepVisited).toBe(`/submit/${submissionId}/editors`);
     });
 });
