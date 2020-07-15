@@ -7,6 +7,7 @@ describe('saveEditorPage', (): void => {
         const submissions = [
             {
                 id: v4(),
+                lastStepVisited: 'details',
                 editorDetails: {
                     suggestedSeniorEditors: [],
                     opposedSeniorEditors: [],
@@ -42,6 +43,7 @@ describe('saveEditorPage', (): void => {
         const submissions = [
             {
                 id: submissionId,
+                lastStepVisited: 'details',
                 editorDetails: {
                     suggestedSeniorEditors: [],
                     opposedSeniorEditors: [],

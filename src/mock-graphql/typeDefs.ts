@@ -21,6 +21,7 @@ export const typeDefs = gql`
         id: ID!
         updated: String!
         articleType: String!
+        lastStepVisited: String!
         author: AuthorDetails
         manuscriptDetails: ManuscriptDetails
         files: FileDetails

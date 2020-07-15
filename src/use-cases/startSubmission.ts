@@ -9,6 +9,7 @@ export const startSubmission = (submissions): ((_, { articleType }) => {}) => (_
         articleType,
         status: 'INITIAL',
         createdBy: 'userId',
+        lastStepVisited: 'author',
         files: {
             supportingFiles: [],
         },

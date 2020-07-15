@@ -7,6 +7,7 @@ describe('saveDetailsPage', (): void => {
         const submissions = [
             {
                 id: v4(),
+                lastStepVisited: 'files',
                 manuscriptDetails: {
                     title: '',
                     subjects: [],
@@ -34,6 +35,7 @@ describe('saveDetailsPage', (): void => {
         const submissions = [
             {
                 id: submissionId,
+                lastStepVisited: 'files',
                 manuscriptDetails: {
                     title: '',
                     subjects: [],

@@ -7,6 +7,7 @@ describe('saveFilesPage', (): void => {
         const submissions = [
             {
                 id: v4(),
+                lastStepVisited: 'author',
                 files: { coverLetter: '' },
             },
         ];
@@ -19,6 +20,7 @@ describe('saveFilesPage', (): void => {
         const submissions = [
             {
                 id: submissionId,
+                lastStepVisited: 'author',
                 files: { coverLetter: '' },
             },
         ];
@@ -32,13 +34,20 @@ describe('saveFilesPage', (): void => {
         const submissions = [
             {
                 id: submissionId,
+                lastStepVisited: 'author',
             },
         ];
-        saveFilesPage(submissions as Array<{ id: string; files: { coverLetter: string } }>)(null, {
-            id: submissionId,
-            coverLetter: 'test',
-        });
+        saveFilesPage(submissions as Array<{ id: string; lastStepVisited: string; files: { coverLetter: string } }>)(
+            null,
+            {
+                id: submissionId,
+                coverLetter: 'test',
+            },
+        );
         expect(submissions).toHaveLength(1);
-        expect((submissions[0] as { id: string; files: { coverLetter: string } }).files.coverLetter).toBe('test');
+        expect(
+            (submissions[0] as { id: string; lastStepVisited: string; files: { coverLetter: string } }).files
+                .coverLetter,
+        ).toBe('test');
     });
 });

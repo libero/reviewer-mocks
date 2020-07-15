@@ -7,6 +7,7 @@ describe('saveAuthorPage', (): void => {
         const submissions = [
             {
                 id: v4(),
+                lastStepVisited: 'author',
                 author: {
                     firstName: '',
                     lastName: '',
@@ -32,6 +33,7 @@ describe('saveAuthorPage', (): void => {
         const submissions = [
             {
                 id: submissionId,
+                lastStepVisited: 'author',
                 author: {
                     firstName: '',
                     lastName: '',

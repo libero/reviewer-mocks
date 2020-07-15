@@ -7,6 +7,7 @@ describe('saveDisclosurePage', (): void => {
         const submissions = [
             {
                 id: v4(),
+                lastStepVisited: 'editors',
                 disclosure: {
                     submitterSignature: '',
                     disclosureConsent: false,
@@ -28,6 +29,7 @@ describe('saveDisclosurePage', (): void => {
         const submissions = [
             {
                 id: submissionId,
+                lastStepVisited: 'editors',
                 disclosure: {
                     submitterSignature: '',
                     disclosureConsent: false,
