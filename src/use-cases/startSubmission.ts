@@ -3,13 +3,14 @@ import { logger } from '../logger';
 
 export const startSubmission = (submissions): ((_, { articleType }) => {}) => (_, { articleType }): {} => {
     logger.info(`startSubmission(${articleType})`);
+    const submissionId = v4();
     const submission = {
-        id: v4(),
+        id: submissionId,
         updated: new Date().toISOString(),
         articleType,
         status: 'INITIAL',
         createdBy: 'userId',
-        lastStepVisited: 'author',
+        lastStepVisited: `/submit/${submissionId}/author`,
         files: {
             supportingFiles: [],
         },
