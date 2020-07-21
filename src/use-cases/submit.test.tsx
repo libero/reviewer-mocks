@@ -7,7 +7,7 @@ describe('Submit', (): void => {
         const submissions = [
             {
                 id: v4(),
-                status: 'INITIAL'
+                status: 'CONTINUE_SUBMISSION'
             },
         ];
 
@@ -20,7 +20,7 @@ describe('Submit', (): void => {
         const submissions = [
             {
                 id: submissionId,
-                status: 'INITIAL'
+                status: 'CONTINUE_SUBMISSION'
             },
         ];
 

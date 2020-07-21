@@ -8,7 +8,7 @@ export const startSubmission = (submissions): ((_, { articleType }) => {}) => (_
         id: submissionId,
         updated: new Date().toISOString(),
         articleType,
-        status: 'INITIAL',
+        status: 'CONTINUE_SUBMISSION',
         createdBy: 'userId',
         lastStepVisited: `/submit/${submissionId}/author`,
         files: {
