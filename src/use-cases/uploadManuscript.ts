@@ -41,6 +41,7 @@ export const uploadManuscript = (
                 },
             });
         }
+        await wait(1500);
         submissions[submissionIndex].suggestions = [{ fieldName: 'title', value: 'My first Manuscript' }];
         return submission;
     }
