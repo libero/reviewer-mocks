@@ -42,6 +42,32 @@ describe('getCurrentUser', (): void => {
         expect(editors[0]).toHaveProperty('expertises');
         expect(editors[0].expertises).toHaveLength(2);
     });
+
+    it('returns a list of deputy editors', (): void => {
+        const mockRequest: Request = { query: { role: 'leadership' } } as Request;
+        const mockResponse: Response = {} as Response;
+        mockResponse.json = jest.fn();
+
+        userApiGetEditors()(mockRequest, mockResponse);
+        const editors = (mockResponse.json as jest.Mock).mock.calls[0][0];
+
+        expect(editors).toHaveLength(3);
+        expect(editors[0]).toHaveProperty('id');
+        expect(editors[0].id).toBe('0aa30d95');
+
+        expect(editors[0]).toHaveProperty('name');
+        expect(editors[0].name).toBe('Deputy Reviewer1');
+
+        expect(editors[0]).toHaveProperty('aff');
+        expect(editors[0].aff).toBe('Dep Rev1 Uni');
+
+        expect(editors[0]).toHaveProperty('focuses');
+        expect(editors[0].focuses).toHaveLength(2);
+
+        expect(editors[0]).toHaveProperty('expertises');
+        expect(editors[0].expertises).toHaveLength(2);
+    });
+
     it('returns a list of reviewing editors', (): void => {
         const mockRequest: Request = { query: { role: 'reviewingEditor' } } as Request;
         const mockResponse: Response = {} as Response;
