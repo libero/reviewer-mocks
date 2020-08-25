@@ -1,0 +1,32 @@
+[
+    {
+        "id": "0aa30d95",
+        "name": "Deputy Reviewer1",
+        "aff": "Dep Rev1 Uni",
+        "focuses": [
+            "a1f",
+            "b1a"
+        ],
+        "expertises": ["a1e", "b1e"]
+    },
+    {
+        "id": "0aa30d96",
+        "name": "Deputy Reviewer3",
+        "aff": "Dep Rev1 Uni",
+        "focuses": [
+            "f1a",
+            "f1b"
+        ],
+        "expertises": ["e1a", "e1b"]
+    },
+    {
+        "id": "0aa30d97",
+        "name": "Deputy Reviewer3",
+        "aff": "Dep Rev1 Uni",
+        "focuses": [
+            "z1a",
+            "z1b"
+        ],
+        "expertises": ["e1g", "e1g"]
+    }
+]

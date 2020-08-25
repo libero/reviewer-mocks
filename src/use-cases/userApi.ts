@@ -14,6 +14,8 @@ export const getEditorsForUserApi = (role: string): object[] => {
         editors = getMockData('seniorEditors.json') as Array<object>;
     } else if (role == 'reviewingEditor') {
         editors = getMockData('reviewingEditors.json') as Array<object>;
+    } else if (role === 'leadership') {
+        editors = getMockData('leadershipEditors.json') as Array<object>;
     }
     return editors;
 };
