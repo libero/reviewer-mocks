@@ -186,6 +186,7 @@ export const typeDefs = gql`
         saveEditorPage(id: ID!, details: EditorDetailsInput!): Submission!
         saveAuthorPage(id: ID!, details: AuthorDetailsInput!): Submission!
         saveDisclosurePage(id: ID!, details: DisclosureDetailsInput!): Submission!
+        saveArticleType(id: ID!, articleType: String!): Submission!
         uploadManuscript(id: ID!, file: Upload!, fileSize: Int!): Submission!
         deleteManuscript(fileId: ID!, submissionId: ID!): Boolean!
         uploadSupportingFile(id: ID!, file: Upload!, fileSize: Int!): File!

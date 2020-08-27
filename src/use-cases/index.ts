@@ -10,6 +10,7 @@ export * from './getProfile';
 export * from './getPerson';
 export * from './userApi';
 export * from './redirectLocation';
+export * from './saveArticleType';
 export * from './saveAuthorPage';
 export * from './saveDisclosurePage';
 export * from './saveFilesPage';
