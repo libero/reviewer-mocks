@@ -31,5 +31,44 @@
             "theft"
         ],
         "expertises": ["Lying", "Deceit"]
+    },
+    {
+        "id": "0da30b95",
+        "name": "Ivan Dikic II",
+        "aff": "Goethe University Frankfurt",
+        "focuses": [
+            "ubiquitination",
+            "autophagy",
+            "endocytosis",
+            "inflammation",
+            "cancer biology"
+        ],
+        "expertises": ["Biochemistry and Chemical Biology", "Cell Biology"]
+    },
+    {
+        "id": "0da30b96",
+        "name": "Ivan Dikic III",
+        "aff": "Goethe University Frankfurt",
+        "focuses": [
+            "ubiquitination",
+            "autophagy",
+            "endocytosis",
+            "inflammation",
+            "cancer biology"
+        ],
+        "expertises": ["Biochemistry and Chemical Biology", "Cell Biology"]
+    },
+    {
+        "id": "0da30b99",
+        "name": "Ivan Dikic V",
+        "aff": "Goethe University Frankfurt",
+        "focuses": [
+            "ubiquitination",
+            "autophagy",
+            "endocytosis",
+            "inflammation",
+            "cancer biology"
+        ],
+        "expertises": ["Biochemistry and Chemical Biology", "Cell Biology"]
     }
 ]

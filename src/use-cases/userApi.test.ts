@@ -26,7 +26,7 @@ describe('getCurrentUser', (): void => {
         userApiGetEditors()(mockRequest, mockResponse);
         const editors = (mockResponse.json as jest.Mock).mock.calls[0][0];
 
-        expect(editors).toHaveLength(3);
+        expect(editors).toHaveLength(6);
         expect(editors[0]).toHaveProperty('id');
         expect(editors[0].id).toBe('0aa30b85');
 
@@ -51,7 +51,7 @@ describe('getCurrentUser', (): void => {
         userApiGetEditors()(mockRequest, mockResponse);
         const editors = (mockResponse.json as jest.Mock).mock.calls[0][0];
 
-        expect(editors).toHaveLength(3);
+        expect(editors).toHaveLength(6);
         expect(editors[0]).toHaveProperty('id');
         expect(editors[0].id).toBe('0aa30d95');
 
@@ -76,7 +76,7 @@ describe('getCurrentUser', (): void => {
         userApiGetEditors()(mockRequest, mockResponse);
         const editors = (mockResponse.json as jest.Mock).mock.calls[0][0];
 
-        expect(editors).toHaveLength(3);
+        expect(editors).toHaveLength(6);
         expect(editors[1]).toHaveProperty('id');
         expect(editors[1].id).toBe('007');
 
