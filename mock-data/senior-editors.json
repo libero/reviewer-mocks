@@ -298,5 +298,155 @@
       }
     ],
     "competingInterests": "Aa Ww is the recipient of a CNRS-Chicago Cooperation Grant, a FACCTS CNRS-Chicago Cooperation Grant, an IRN CNRS Predictability, Adaptability Evolution network collaboration grant, a CNRS-MIT Cooperation Grant, a q-Life Grant \"The physics of repair and silencing foci?, an ERC Proof of Concept Grant \"Automated evaluation and correction of generation bias in immune receptor repertoires\", a DFG CRC \"Predictability in evolution\", an ERC International Training Network QuanTII grant, and an ERC Consolidator Grant \"Statistical physics of immune-viral co-evolution”."
+  },
+    {
+    "id": "9001002",
+    "type": {
+      "id": "senior-editor",
+      "label": "Senior Editor"
+    },
+    "name": {
+      "surname": "Ww",
+      "givenNames": "Aa",
+      "preferred": "Aa Ww",
+      "index": "Ww, Aa"
+    },
+    "orcid": "0002-0002-0002-0002",
+    "image": {
+      "uri": "",
+      "alt": "",
+      "source": {
+        "mediaType": "image/jpeg",
+        "uri": "",
+        "filename": "a.jpeg"
+      },
+      "size": {
+        "width": 640,
+        "height": 359
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      }
+    },
+    "profile": [
+      {
+        "text": "Aa Ww received her PhD in physics at UCSD working on models of stochastic gene expression. After a graduate fellowship at KITP, she was a Princeton Center for Theoretical Science Fellow, focusing on applying information theory to signal processing in small gene regulatory networks. Currently she is a CNRS researcher at the Ecole Normale Superieure in Paris, interested in a variety of problems in the physics of living systems.",
+        "type": "paragraph"
+      },
+      {
+        "text": "She actively works on development, collective behavior of bird flocks and statistical descriptions of the immune system.",
+        "type": "paragraph"
+      }
+    ],
+    "research": {
+      "focuses": [
+        "systems biology",
+        "gene regulatory networks",
+        "immune system",
+        "population genetics"
+      ],
+      "expertises": [
+        {
+          "id": "computational-systems-biology",
+          "name": "Computational and Systems Biology"
+        },
+        {
+          "id": "physics-living-systems",
+          "name": "Physics of Living Systems"
+        }
+      ]
+    },
+    "affiliations": [
+      {
+        "name": [
+          "Ecole Normale Superieure"
+        ],
+        "address": {
+          "formatted": [
+            "France"
+          ],
+          "components": {
+            "country": "France"
+          }
+        }
+      }
+    ],
+    "competingInterests": "Aa Ww is the recipient of a CNRS-Chicago Cooperation Grant, a FACCTS CNRS-Chicago Cooperation Grant, an IRN CNRS Predictability, Adaptability Evolution network collaboration grant, a CNRS-MIT Cooperation Grant, a q-Life Grant \"The physics of repair and silencing foci?, an ERC Proof of Concept Grant \"Automated evaluation and correction of generation bias in immune receptor repertoires\", a DFG CRC \"Predictability in evolution\", an ERC International Training Network QuanTII grant, and an ERC Consolidator Grant \"Statistical physics of immune-viral co-evolution”."
+  },
+  {
+    "id": "9000005",
+    "type": {
+      "id": "senior-editor",
+      "label": "Senior Editor"
+    },
+    "name": {
+      "surname": "Ww",
+      "givenNames": "Aa",
+      "preferred": "Aa Ww",
+      "index": "Ww, Aa"
+    },
+    "orcid": "0002-0002-0002-0002",
+    "image": {
+      "uri": "",
+      "alt": "",
+      "source": {
+        "mediaType": "image/jpeg",
+        "uri": "",
+        "filename": "a.jpeg"
+      },
+      "size": {
+        "width": 640,
+        "height": 359
+      },
+      "focalPoint": {
+        "x": 50,
+        "y": 50
+      }
+    },
+    "profile": [
+      {
+        "text": "Aa Ww received her PhD in physics at UCSD working on models of stochastic gene expression. After a graduate fellowship at KITP, she was a Princeton Center for Theoretical Science Fellow, focusing on applying information theory to signal processing in small gene regulatory networks. Currently she is a CNRS researcher at the Ecole Normale Superieure in Paris, interested in a variety of problems in the physics of living systems.",
+        "type": "paragraph"
+      },
+      {
+        "text": "She actively works on development, collective behavior of bird flocks and statistical descriptions of the immune system.",
+        "type": "paragraph"
+      }
+    ],
+    "research": {
+      "focuses": [
+        "systems biology",
+        "gene regulatory networks",
+        "immune system",
+        "population genetics"
+      ],
+      "expertises": [
+        {
+          "id": "computational-systems-biology",
+          "name": "Computational and Systems Biology"
+        },
+        {
+          "id": "physics-living-systems",
+          "name": "Physics of Living Systems"
+        }
+      ]
+    },
+    "affiliations": [
+      {
+        "name": [
+          "Ecole Normale Superieure"
+        ],
+        "address": {
+          "formatted": [
+            "France"
+          ],
+          "components": {
+            "country": "France"
+          }
+        }
+      }
+    ],
+    "competingInterests": "Aa Ww is the recipient of a CNRS-Chicago Cooperation Grant, a FACCTS CNRS-Chicago Cooperation Grant, an IRN CNRS Predictability, Adaptability Evolution network collaboration grant, a CNRS-MIT Cooperation Grant, a q-Life Grant \"The physics of repair and silencing foci?, an ERC Proof of Concept Grant \"Automated evaluation and correction of generation bias in immune receptor repertoires\", a DFG CRC \"Predictability in evolution\", an ERC International Training Network QuanTII grant, and an ERC Consolidator Grant \"Statistical physics of immune-viral co-evolution”."
   }
 ]

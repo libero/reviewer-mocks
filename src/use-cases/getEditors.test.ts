@@ -4,7 +4,7 @@ describe('get editors', (): void => {
     it('returns a list of senior editors', (): void => {
         const editors = getEditors()({}, { role: 'seniorEditor' });
 
-        expect(editors).toHaveLength(3);
+        expect(editors).toHaveLength(6);
         expect(editors[0]).toHaveProperty('id');
         expect(editors[0].id).toBe('0aa30b85');
 
@@ -23,7 +23,7 @@ describe('get editors', (): void => {
     it('returns a list of reviewing editors', (): void => {
         const editors = getEditors()({}, { role: 'reviewingEditor' });
 
-        expect(editors).toHaveLength(3);
+        expect(editors).toHaveLength(6);
         expect(editors[1]).toHaveProperty('id');
         expect(editors[1].id).toBe('007');
 

@@ -22,7 +22,7 @@ describe('get person', (): void => {
         expect(mockResponse.json).toHaveBeenCalledTimes(1);
         expect(typeof (mockResponse.json as jest.Mock).mock.calls[0][0]).toBe('object');
         const people = (mockResponse.json as jest.Mock).mock.calls[0][0].items;
-        expect(people).toHaveLength(4);
+        expect(people).toHaveLength(6);
         expect(people[0]).toMatchObject({
             id: '9000011',
             type: {
@@ -86,7 +86,7 @@ describe('get person', (): void => {
         expect(mockResponse.json).toHaveBeenCalledTimes(1);
         expect(typeof (mockResponse.json as jest.Mock).mock.calls[0][0]).toBe('object');
         const people = (mockResponse.json as jest.Mock).mock.calls[0][0].items;
-        expect(people).toHaveLength(4);
+        expect(people).toHaveLength(7);
         expect(people[0]).toMatchObject({
             id: 'a0000011',
             type: {

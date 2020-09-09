@@ -28,5 +28,35 @@
             "f3b"
         ],
         "expertises": ["e3a", "e3b"]
+    },
+    {
+        "id": "0aa30b07",
+        "name": "Reviewer4",
+        "aff": "Rev3 Uni",
+        "focuses": [
+            "f3a",
+            "f3b"
+        ],
+        "expertises": ["e3a", "e3b"]
+    },
+    {
+        "id": "0ab30b09",
+        "name": "Reviewer5",
+        "aff": "Rev3 Uni",
+        "focuses": [
+            "f3a",
+            "f3b"
+        ],
+        "expertises": ["e3a", "e3b"]
+    },
+    {
+        "id": "0aq30b01",
+        "name": "Reviewer4",
+        "aff": "Rev3 Uni",
+        "focuses": [
+            "f3a",
+            "f3b"
+        ],
+        "expertises": ["e3a", "e3b"]
     }
 ]
