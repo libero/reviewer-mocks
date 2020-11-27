@@ -44,7 +44,7 @@ export const userApiGetCurrentUser = () => (req: Request, res: Response): void =
 };
 
 export const userApiGetEditors = () => (req: Request, res: Response): void => {
-    const role = req.query.role;
+    const role = req.query.role as string;
     logger.info(`userApiGetEditors(${role})`);
     res.json(getEditorsForUserApi(role));
 };
