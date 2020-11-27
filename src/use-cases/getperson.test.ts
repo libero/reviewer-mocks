@@ -13,7 +13,7 @@ describe('get person', (): void => {
         expect(typeof (mockResponse.json as jest.Mock).mock.calls[0][0]).toBe('object');
     });
     it('returns senior-editors', (): void => {
-        const mockRequest: Request = { query: { type: ['senior-editor'] } } as Request;
+        const mockRequest: Request = ({ query: { type: ['senior-editor'] } } as unknown) as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.json = jest.fn();
 
@@ -77,7 +77,7 @@ describe('get person', (): void => {
         });
     });
     it('returns reviewing-editors', (): void => {
-        const mockRequest: Request = { query: { type: ['reviewing-editor'] } } as Request;
+        const mockRequest: Request = ({ query: { type: ['reviewing-editor'] } } as unknown) as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.json = jest.fn();
 

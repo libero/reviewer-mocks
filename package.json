@@ -48,5 +48,9 @@
   },
   "engines": {
     "node": ">=12.15.0"
+  },
+  "resolutions": {
+    "minimist": ">=0.2.1",
+    "yargs-parser": ">=13.1.2"
   }
 }

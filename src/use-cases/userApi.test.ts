@@ -19,7 +19,7 @@ describe('getCurrentUser', (): void => {
         expect(sub).toBe(expectedSub);
     });
     it('returns a list of senior editors', (): void => {
-        const mockRequest: Request = { query: { role: 'seniorEditor' } } as Request;
+        const mockRequest: Request = ({ query: { role: 'seniorEditor' } } as unknown) as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.json = jest.fn();
 
@@ -44,7 +44,7 @@ describe('getCurrentUser', (): void => {
     });
 
     it('returns a list of deputy editors', (): void => {
-        const mockRequest: Request = { query: { role: 'leadership' } } as Request;
+        const mockRequest: Request = ({ query: { role: 'leadership' } } as unknown) as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.json = jest.fn();
 
@@ -69,7 +69,7 @@ describe('getCurrentUser', (): void => {
     });
 
     it('returns a list of reviewing editors', (): void => {
-        const mockRequest: Request = { query: { role: 'reviewingEditor' } } as Request;
+        const mockRequest: Request = ({ query: { role: 'reviewingEditor' } } as unknown) as Request;
         const mockResponse: Response = {} as Response;
         mockResponse.json = jest.fn();
 
