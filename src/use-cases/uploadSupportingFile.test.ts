@@ -16,8 +16,10 @@ describe('uploadSupportingFile', (): void => {
     });
 
     it('adds the supporting to the in memory submission object', async (): Promise<void> => {
-        const submissions: { id: string; files?: { supportingFiles?: [] } }[] = [{ id: 'A' }];
-        await uploadSupportingFile(submissions)(null, { id: 'A', fileSize: 40, file: {} });
-        expect(submissions[0].files?.supportingFiles).toBeDefined();
+        const submissions = [{ id: 'A' }];
+        await uploadSupportingFile(submissions as unknown)(null, { id: 'A', fileSize: 40, file: {} });
+        expect(
+            ((submissions[0] as unknown) as { files?: { supportingFiles: unknown } }).files?.supportingFiles,
+        ).toBeDefined();
     });
 });
